@@ -1,0 +1,29 @@
+{% extends 'dashboard/base/accountbase.html' %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+	<div class="page">
+		<div class="page-content z-index-10">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-4 col-md-12 col-md-12 d-block mx-auto">
+						<div class="card mb-0">
+							<div class="card-header">
+								<h3 class="card-title">You have logout successfully</h3>
+							</div>
+							<div class="card-body">
+								<div class="form-footer mt-2">
+									<a href={% url 'home' %}><button class="btn btn-primary btn-block">Homepage</button></a>
+								</div>
+								<div class="form-footer mt-2">
+									<a href={% url 'login' %}><button class="btn btn-primary btn-block">SignIn</button></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

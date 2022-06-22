@@ -1,0 +1,72 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content%}
+
+				<!-- App-Content-->
+				<div class="app-content  my-3 my-md-5">
+					<div class="side-app">
+
+						<!-- Page-Header-->
+						<div class="page-header">
+							<h1 class="page-title">Create Services</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page">create-services</li>
+							</ol>
+						</div>
+						<!-- /Page-Header-->
+						
+						<div class="row">
+							<div class="col-12">
+								<div   class="card">
+									<div class="card-header">
+										<h3 class="card-title">Create Service</h3>
+									</div>
+									<form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-6 col-lg-6">
+													<div class="form-group">
+														<label class="form-label">Service Title</label>
+														{% comment %} <input type="text" class="form-control" name="example-text-input" placeholder="e.g. Service 1">  {% endcomment %}
+														{% render_field form.serviceTitle class="form-control" placeholder="e.g. Service 1" %}
+													</div>
+													<div class="form-group">
+														<label class="form-label">Main Title</label>
+														{% render_field form.title class="form-control" placeholder="e.g. What we do" %}
+													</div>
+													<div class="form-group">
+														<label class="form-label">Column Number</label>
+														{% render_field form.serviceNumber class="form-control" placeholder="e.g. 1" %}
+													</div>
+												</div>
+												<div class="col-md-6 col-lg-6">
+													<div class="form-group">
+														<label class="form-label">About Service</label>
+														{% render_field form.text class="form-control" placeholder="Text.." %}
+													</div>
+													<div class="form-group">
+														<div class="form-group">
+															<label class="form-label">Background Image (700px by 870px) </label>
+															{% render_field form.image class="form-control" placeholder="e.g. 1" %}
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-footer text-right">
+											<div class="d-flex">
+												<a href="{% url 'view_services' %}" class="btn btn-link">Cancel</a>
+												<button type="submit" class="btn btn-primary ml-auto">Submit</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}

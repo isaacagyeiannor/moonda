@@ -1,0 +1,58 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% block content%}
+
+<!-- App-Content-->
+<div class="app-content  my-3 my-md-5">
+	<div class="side-app">
+
+		<!-- Page-Header-->
+		<div class="page-header">
+			<h4 class="page-title">Add Picture</h4>
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+				<li class="breadcrumb-item active" aria-current="page">add-picture</li>
+			</ol>
+		</div>
+		<!-- Page-Header-->
+
+		<div class="row row-cards">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">Add Picture</div>
+					</div>
+					<form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
+					
+					<div class="card-body">
+						<div class="form-group">
+							<label class="form-label">Gallery Title</label>
+							{% render_field form.title class="form-control" placeholder="Gallery Title" %}
+						</div>
+						<hr />
+						<div class="form-group">
+							<label class="form-label">Picture Title</label>
+							{% render_field form.title class="form-control" placeholder="PictureTitle" %}
+						</div>
+						<div class="form-group">
+							<div class="form-group">
+								<label class="form-label">Image (600px by 600px)</label>
+								{% render_field form.image class="form-control" placeholder="upload image" %}
+							</div>
+						</div>
+						<div class="card-footer text-right">
+							<div class="d-flex">
+								<a href="{% url 'view_pictures' %}" class="btn btn-link">Cancel</a>
+								<button type="submit" class="btn btn-primary ml-auto">Add</button>
+							</div>
+						</div>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

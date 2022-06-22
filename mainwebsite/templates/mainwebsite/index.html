@@ -1,0 +1,934 @@
+﻿{% extends "mainwebsite/base/base.html" %}
+{% load static  %}
+{% block content %}
+<div class="corzo-page-wrapper" id="corzo-page-wrapper">
+    <div class="gdlr-core-page-builder-body">
+        <div class="gdlr-core-pbf-wrapper" style="padding: 85px 0px 0px 0px;" id="gdlr-core-wrapper-1">
+            <div class="gdlr-core-pbf-background-wrap" style="background-color: #0c0c0c;"></div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space">
+                    <div class="gdlr-core-pbf-element">
+                        <div class="gdlr-core-revolution-slider-item gdlr-core-item-pdlr gdlr-core-item-pdb" style="padding-bottom: 0px;">
+                            <!-- START Homepage 1 REVOLUTION SLIDER 6.4.2 -->
+                            <p class="rs-p-wp-fix"></p>
+                            <rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery" style="background: transparent; padding: 0; margin: 0px auto; margin-top: 0; margin-bottom: 0;">
+                                <rs-module id="rev_slider_1_1" style="" data-version="6.4.2">
+                                    
+                                    <rs-slides>
+                                        {% for slider in sliders %}
+                                        <rs-slide
+                                            data-key={{slider.rsnumber}}
+                                            data-title="Slide"
+                                            data-thumb="{% static 'mainwebsite/images/zhonghuaslider1.jpg' %}"
+                                            data-in="o:0;"
+                                            data-out="a:false;"
+                                            data-p2="01 Our Company"
+                                        >
+                                            <img src={{slider.image.url}} title="slider-1-bg" width="1800" height="1168" class="rev-slidebg" data-no-retina="" />
+                                            <a
+                                                id="slider-1-slide-1-layer-2"
+                                                class="rs-layer rev-btn"
+                                                href="{% url 'about' %}"
+                                                target="_self"
+                                                data-type="button"
+                                                data-rsp_ch="on"
+                                                data-xy="x:l,l,c,c;xo:39px,39px,0,0;yo:561px,561px,370px,329px;"
+                                                data-text="w:normal;s:20,20,24,20;l:29,29,16,10;fw:500;"
+                                                data-dim="h:auto,auto,auto,33px;minh:0px,0px,none,none;"
+                                                data-frame_1="st:820;sR:820;"
+                                                data-frame_999="o:0;st:w;sR:7880;"
+                                                data-frame_hover="c:#d32525;bor:0px,0px,0px,0px;bri:120%;"
+                                                style="z-index: 9; font-family: Jost;"
+                                            >
+                                                Learn More About Us <i class="fa-long-arrow-right" style="margin-left: 11px; font-size: 22px;"></i>
+                                            </a>
+                                            <rs-layer
+                                                id="slider-1-slide-1-layer-3"
+                                                class="jost-font"
+                                                data-type="text"
+                                                data-rsp_ch="on"
+                                                data-xy="x:l,l,c,c;xo:40px,40px,0,0;yo:430px,430px,224px,158px;"
+                                                data-text="w:normal;s:76,76,58,43;l:85,85,49,52;fw:600;a:left,left,left,center;"
+                                                data-dim="w:auto,auto,auto,301px;"
+                                                data-frame_1="st:380;sR:380;"
+                                                data-frame_999="o:0;st:w;sR:8320;"
+                                                style="z-index: 11; font-family: Jost;"
+                                            >
+                                            {{slider.boldtext}}
+                                            </rs-layer>
+                                            <rs-layer
+                                                id="slider-1-slide-1-layer-5"
+                                                class="jost-font"
+                                                data-type="text"
+                                                data-rsp_ch="on"
+                                                data-xy="x:l,l,c,c;xo:40px,40px,0,0;yo:354px,354px,149px,103px;"
+                                                data-text="s:60,60,50,16;l:60;ls:0,0,0,1px;fw:300,300,300,700;a:left,left,center,center;"
+                                                data-dim="w:633px,633px,633px,358px;"
+                                                data-frame_1="st:120;sR:120;"
+                                                data-frame_999="o:0;st:w;sR:8580;"
+                                                style="z-index: 12; font-family: Jost;"
+                                            >
+                                                {{slider.lighttext}}
+                                            </rs-layer>
+                                            </rs-layer>
+                                        </rs-slide>
+                                        {% endfor %}
+
+                                    </rs-slides>
+                                </rs-module>
+
+                            </rs-module-wrap>
+                            <!-- END REVOLUTION SLIDER -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gdlr-core-pbf-wrapper" style="padding: 0px 0px 0px 0px;">
+            <div class="gdlr-core-pbf-background-wrap"></div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js"><div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-pbf-wrapper-full-no-space"></div></div>
+        </div>
+        <div class="gdlr-core-pbf-wrapper" style="padding: 95px 0px 90px 0px;" id="gdlr-core-wrapper-2">
+            <div class="gdlr-core-pbf-background-wrap">
+                <div
+                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                    style="background-image: url({% static 'mainwebsite/upload/hp1-service-bg-2.png' %}); background-repeat: no-repeat; background-position: top center;"
+                    data-parallax-speed="0.03"
+                ></div>
+            </div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-46110">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="margin: 0px 0px 0px -20px; padding: 0px 0px 70px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px;">
+                                        <span
+                                            class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
+                                            style="font-size: 14px; font-weight: 500; font-style: normal; letter-spacing: 3px; text-transform: uppercase; color: #d32525; margin-bottom: 5px;"
+                                        >
+                                            <span class="gdlr-core-title-item-caption-prefix" style="border-color: #d32525; height: 13px; margin-right: 14px;"></span>What we do
+                                        </span>
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 42px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #1b1b1b;">
+                                                Services We Provide<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-23200">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="margin: 0px -20px 0px -20px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-feature-content-item gdlr-core-item-pdb clearfix gdlr-core-item-pdlr" id="gdlr-core-feature-content-67350">
+                                       {% for service in services %}
+                                        <div class="gdlr-core-column-20">
+                                            <div class="gdlr-core-feature-content clearfix gdlr-core-left-align" style="border-width: 0px 0px 0px 0px;">
+                                                <div class="gdlr-core-feature-content-thumbnail gdlr-core-media-image">
+                                                    <img src={{service.image.url}} alt="" width="700" height="870" title="img01" />
+                                                </div>
+                                                <div class="gdlr-core-feature-box-overlay" style="background: #000000; opacity: 0.01;"></div>
+                                                <div class="gdlr-core-feature-content-box gdlr-core-with-background" style="padding-right: 50px; padding-bottom: 40px; padding-left: 55px;">
+                                                    <div class="gdlr-core-feature-content-caption gdlr-core-skin-info" style="color: #a5a5a5; font-size: 13px; font-weight: 500; letter-spacing: 0px; text-transform: none;">
+                                                        0{{service.serviceNumber}}
+                                                    </div>
+                                                    <div
+                                                        class="gdlr-core-feature-content-title gdlr-core-title-font gdlr-core-skin-title"
+                                                        style="font-size: 29px; font-weight: 600; letter-spacing: 0px; text-transform: none;"
+                                                    >
+                                                    {{service.title}}
+                                                    </div>
+                                                    <div class="gdlr-core-feature-content-wrap">
+                                                        <div class="gdlr-core-feature-content-content gdlr-core-skin-content" style="font-size: 18px; font-weight: 400; letter-spacing: 0px; text-transform: none;">
+                                                            <p>{{service.text}}</p>
+                                                        </div>
+                                                        <a class="gdlr-core-feature-content-learn-more" href="asset-management.html" style="text-transform: none;">Learn More<i class="ion-ios-arrow-thin-right"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% for homeaboutus in homeaboutuss %}
+                    <div class="gdlr-core-pbf-column gdlr-core-column-30 gdlr-core-column-first gdlr-core-hide-in-mobile" id="gdlr-core-column-58090">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js gdlr-core-column-extend-left" style="margin: 100px 0px 0px 0px; padding-top: 0px; padding-bottom: 0px;" data-sync-height="height-learning">
+                            <div class="gdlr-core-pbf-background-wrap">
+                                <div
+                                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                                    style="background-image: url({{homeaboutus.image.url}}); background-size: cover; background-position: center;"
+                                    data-parallax-speed="0"
+                                ></div>
+                            </div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content"></div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-column gdlr-core-column-30" id="gdlr-core-column-53863">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="margin: 100px 0px 0px 0px; padding: 40px 0px 0px 60px;" data-sync-height="height-learning">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div
+                                class="gdlr-core-pbf-column-content clearfix gdlr-core-js gdlr-core-sync-height-content"
+                                data-gdlr-animation="fadeInRight"
+                                data-gdlr-animation-duration="600ms"
+                                data-gdlr-animation-offset="0.8"
+                            >
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 25px;">
+                                        <span
+                                            class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
+                                            style="font-size: 14px; font-weight: 500; font-style: normal; letter-spacing: 3px; text-transform: uppercase; color: #d32525;"
+                                        >
+                                            <span class="gdlr-core-title-item-caption-prefix" style="border-color: #d32525; height: 13px; margin-right: 14px;"></span>{{homeaboutus.headingTag}}
+                                        </span>
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 45px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #1b1b1b;">
+                                                {{homeaboutus.heading}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align gdlr-core-no-p-space">
+                                        <div class="gdlr-core-text-box-item-content" style="font-size: 18px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #6d6a6a;">
+                                            <p>
+                                                {{homeaboutus.paragraph}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-icon-list-item gdlr-core-item-pdlr gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-style-1" style="padding-bottom: 10px;">
+                                        <ul>
+                                            <li class="gdlr-core-skin-divider clearfix" style="margin-bottom: 8px;">
+                                                <span class="gdlr-core-icon-list-icon-wrap gdlr-core-left" style="margin-top: 4px; margin-right: 10px;">
+                                                    <i class="gdlr-core-icon-list-icon icon-check" style="color: #d32525; font-size: 19px; width: 19px;"></i>
+                                                </span>
+                                                <div class="gdlr-core-icon-list-content-wrap">
+                                                    <span class="gdlr-core-icon-list-content" style="color: #1b1b1b; font-size: 19px; font-weight: 500; text-transform: none; letter-spacing: 0px;">
+                                                        {{homeaboutus.list1}}
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="gdlr-core-skin-divider clearfix" style="margin-bottom: 8px;">
+                                                <span class="gdlr-core-icon-list-icon-wrap gdlr-core-left" style="margin-top: 4px; margin-right: 10px;">
+                                                    <i class="gdlr-core-icon-list-icon icon-check" style="color: #d32525; font-size: 19px; width: 19px;"></i>
+                                                </span>
+                                                <div class="gdlr-core-icon-list-content-wrap">
+                                                    <span class="gdlr-core-icon-list-content" style="color: #1b1b1b; font-size: 19px; font-weight: 500; text-transform: none; letter-spacing: 0px;">
+                                                        {{homeaboutus.list2}}
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li class="gdlr-core-skin-divider clearfix" style="margin-bottom: 8px;">
+                                                <span class="gdlr-core-icon-list-icon-wrap gdlr-core-left" style="margin-top: 4px; margin-right: 10px;">
+                                                    <i class="gdlr-core-icon-list-icon icon-check" style="color: #d32525; font-size: 19px; width: 19px;"></i>
+                                                </span>
+                                                <div class="gdlr-core-icon-list-content-wrap">
+                                                    <span class="gdlr-core-icon-list-content" style="color: #1b1b1b; font-size: 19px; font-weight: 500; text-transform: none; letter-spacing: 0px;">
+                                                        {{homeaboutus.list3}}
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 40px;">
+                                        <a class="gdlr-core-button gdlr-core-button-transparent gdlr-core-left-align gdlr-core-button-with-border" href="{% url 'about' %}" id="gdlr-core-button-id-77414">
+                                            <span class="gdlr-core-content">Learn More</span><i class="gdlr-core-pos-right ion-ios-arrow-thin-right" style="font-size: 31px; color: #d32525;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="gdlr-core-pbf-wrapper" style="padding: 18px 0px 95px 0px;">
+            {% for homewhyus in homewhyuss %}
+            <div class="gdlr-core-pbf-background-wrap">
+                <div
+                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                    style="background-image: url({% static 'mainwebsite/upload/hp1-service-bg-2.png'%}); background-repeat: no-repeat; background-position: top center;"
+                    data-parallax-speed="0"
+                ></div>
+            </div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    <div class="gdlr-core-pbf-column gdlr-core-column-45 gdlr-core-column-first" id="gdlr-core-column-47449">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js gdlr-core-column-extend-left" style="padding: 105px 400px 105px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap">
+                                <div
+                                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                                    style="background-image: url({{homewhyus.image1.url}}); background-size: cover; background-position: center;"
+                                    data-parallax-speed="0"
+                                ></div>
+                            </div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" data-gdlr-animation="fadeInLeft" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr">
+                                        <span
+                                            class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
+                                            style="font-size: 14px; font-weight: 500; font-style: normal; letter-spacing: 3px; text-transform: uppercase; color: #d32525;"
+                                        >
+                                            <span class="gdlr-core-title-item-caption-prefix" style="border-color: #d32525; height: 13px; margin-right: 14px;"></span>Big Name Customers
+                                        </span>
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 45px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #ffffff;">
+                                                {{homewhyus.heading1}} <br />
+                                                <span style="color: #d32525;">{{homewhyus.heading2}}</span> {{homewhyus.heading3}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align gdlr-core-no-p-space" style="padding-bottom: 20px;">
+                                        <div class="gdlr-core-text-box-item-content" style="font-size: 18px; font-weight: 400; letter-spacing: 0px; text-transform: none; color: #b8b8b8;">
+                                            <p>
+                                                {{homewhyus.paragraph}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px;">
+                                        <a class="gdlr-core-button gdlr-core-button-transparent gdlr-core-left-align gdlr-core-button-no-border" href="tel: 0553628168" id="gdlr-core-button-id-27906">
+                                            <span class="gdlr-core-content">Call Now</span><i class="gdlr-core-pos-right ion-ios-arrow-thin-right" style="font-size: 31px; color: #d32525;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gdlr-core-pbf-column gdlr-core-column-15" id="gdlr-core-column-2394">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="margin: 0px 0px 0px -310px; padding: 130px 0px 0px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-image-item gdlr-core-item-pdb gdlr-core-center-align gdlr-core-item-pdlr" style="padding-bottom: 0px;">
+                                        <div class="gdlr-core-image-item-wrap gdlr-core-media-image gdlr-core-image-item-style-rectangle" style="border-width: 0px;">
+                                            <img src="{{homewhyus.image2.url}}" alt="" width="850" height="563" title="building img" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="gdlr-core-pbf-wrapper" style="padding: 110px 0px 120px 0px;" data-skin="counter HP" id="gdlr-core-wrapper-3">
+            <div class="gdlr-core-pbf-background-wrap">
+                <div
+                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                    style="background-image: url({% static 'mainwebsite/upload/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpg'%}); background-size: cover; background-position: center;"
+                    data-parallax-speed="0"
+                ></div>
+            </div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js" data-gdlr-animation="fadeInDown" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    
+                    {% for companysummary in companysummarys %}
+                    <div class="gdlr-core-pbf-column gdlr-core-column-15" id="gdlr-core-column-78362">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 45px;">
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 13px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #a5a5a5;">
+                                                {{companysummary.summaryNumber}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-counter-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" style="padding-bottom: 0px;">
+                                        <div class="gdlr-core-counter-item-number gdlr-core-skin-title gdlr-core-title-font" style="font-size: 48px; font-weight: 700; margin-bottom: 0px;">
+                                            <span class="gdlr-core-counter-item-count gdlr-core-js" data-duration="" data-counter-start="0" data-counter-end={{companysummary.totalNumber}}>0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 50px;">
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 14px; font-weight: 500; letter-spacing: 2px; color: #d32525;">
+                                                {{companysummary.title}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-left-align" style="margin-bottom: 0px; margin-left: 0px;">
+                                        <div class="gdlr-core-divider-container" style="max-width: 110px;">
+                                            <div
+                                                class="gdlr-core-divider-line gdlr-core-skin-divider"
+                                                style="border-color: #d32525; border-width: 3px; border-radius: 0px; -moz-border-radius: 0px; -webkit-border-radius: 0px;"
+                                            ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+        <div class="gdlr-core-pbf-wrapper" style="padding: 135px 0px 120px 0px;" id="gdlr-core-wrapper-4">
+            <div class="gdlr-core-pbf-background-wrap">
+                <div
+                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                    style="background-image: url({% static 'mainwebsite/upload/hp1-portfolio-bg.png'%}); background-repeat: no-repeat; background-position: top center;"
+                    data-parallax-speed="0"
+                ></div>
+            </div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    <div class="gdlr-core-pbf-column gdlr-core-column-40 gdlr-core-column-first">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 0px;">
+                                        <span
+                                            class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
+                                            style="font-size: 14px; font-weight: 500; font-style: normal; letter-spacing: 3px; text-transform: uppercase; color: #d32525; margin-bottom: 0px;"
+                                        >
+                                            <span class="gdlr-core-title-item-caption-prefix" style="border-color: #d32525; height: 13px; margin-right: 14px;"></span>Picture of the company
+                                        </span>
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 42px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #1b1b1b;">
+                                                Our Gallery<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-column gdlr-core-column-20" id="gdlr-core-column-89383">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 30px 0px 0px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-right-align" style="padding-bottom: 0px;">
+                                        <a
+                                            class="gdlr-core-button gdlr-core-button-transparent gdlr-core-right-align gdlr-core-button-no-border"
+                                            href="{% url 'gallery' %}"
+                                            id="gdlr-core-button-id-79271"
+                                        >
+                                            <span class="gdlr-core-content">View Gallery</span><i class="gdlr-core-pos-right ion-ios-arrow-thin-right" style="font-size: 31px; color: #d32525;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="HP1 Blog" id="gdlr-core-column-7209">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 5px 0px 230px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-portfolio-item gdlr-core-item-pdb clearfix gdlr-core-portfolio-item-style-grid3 gdlr-core-item-pdlr" style="padding-bottom: 0px;">
+                                        <div
+                                            class="gdlr-core-flexslider flexslider gdlr-core-js-2 gdlr-core-bullet-style-round gdlr-core-color-bullet"
+                                            data-type="carousel"
+                                            data-column="3"
+                                            data-move="1"
+                                            data-nav="bullet"
+                                            data-nav-parent="gdlr-core-portfolio-item"
+                                            data-controls-top-margin="45px"
+                                        >
+                                            <ul class="slides">
+                                                {% for gallery in gallerys %}
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-portfolio-grid3 gdlr-core-outer-frame-element">
+                                                        <div class="gdlr-core-portfolio-thumbnail gdlr-core-media-image gdlr-core-style-margin-title">
+                                                            <div class="gdlr-core-portfolio-thumbnail-image-wrap">
+                                                                <a href="artificial-intelligence.html">
+                                                                    <img src={{gallery.image.url}} alt="" width="600" height="600" title="iStock-1132126199" />
+                                                                    <span class="gdlr-core-image-overlay gdlr-core-portfolio-overlay gdlr-core-image-overlay-center-icon gdlr-core-js gdlr-core-with-margin">
+                                                                        <span class="gdlr-core-image-overlay-content">
+                                                                            <span class="gdlr-core-portfolio-title gdlr-core-title-font" style="font-size: 20px; font-weight: 600; letter-spacing: 0px; text-transform: none;">
+                                                                                {{gallery.title}}
+                                                                            </span>
+                                                                        </span>
+                                                                    </span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="gdlr-core-portfolio-content-wrap gdlr-core-skin-e-background gdlr-core-skin-divider"
+                                                            style="
+                                                                box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06);
+                                                                -moz-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06);
+                                                                -webkit-box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.06);
+                                                                border-color: #ffffff;
+                                                                padding-top: 27px;
+                                                                padding-bottom: 27px;
+                                                                padding-left: 30px;
+                                                            "
+                                                        >
+                                                            <h3 class="gdlr-core-portfolio-title gdlr-core-skin-title" style="font-weight: 700; text-transform: none;">
+                                                                <a href="artificial-intelligence.html">{{gallery.title}}</a>
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="gdlr-core-pbf-wrapper" style="padding: 130px 0px 100px 0px;" id="gdlr-core-wrapper-5">
+            <div class="gdlr-core-pbf-background-wrap" style="background-color: #f3f3f3;"></div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-16699">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" style="max-width: 900px;" data-gdlr-animation="fadeInUp" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-testimonial-item gdlr-core-item-pdb clearfix gdlr-core-testimonial-style-center gdlr-core-item-pdlr" style="padding-bottom: 0px;" id="gdlr-core-testimonial-40693">
+                                        <div class="gdlr-core-flexslider flexslider gdlr-core-js-2 gdlr-core-bullet-style-round gdlr-core-color-bullet" data-type="carousel" data-column="1" data-move="1" data-nav="bullet">
+                                            <ul class="slides">
+                                                {% for testimonial in testimonials|slice:':3' %}
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div class="gdlr-core-testimonial clearfix">
+                                                        <div class="gdlr-core-testimonial-content-wrap">
+                                                            <div
+                                                                class="gdlr-core-testimonial-quote gdlr-core-quote-font gdlr-core-skin-icon"
+                                                                style="font-size: 180px; font-weight: 400; margin-top: 40px; margin-bottom: 0px; color: #cfcfcf;"
+                                                            >
+                                                                &#8220;
+                                                            </div>
+                                                            <div
+                                                                class="gdlr-core-testimonial-content gdlr-core-info-font gdlr-core-skin-content"
+                                                                style="font-size: 31px; font-style: normal; font-weight: 400; letter-spacing: 0px; color: #424242; padding-bottom: 55px;"
+                                                            >
+                                                                <p>
+                                                                    {{testimonial.testimony}}
+                                                                </p>
+                                                            </div>
+                                                            <div class="gdlr-core-testimonial-author-wrap clearfix">
+                                                                <div class="gdlr-core-testimonial-author-image gdlr-core-media-image">
+                                                                    <img src={{testimonial.image.url}} alt="" width="150" height="150" title="portrait05" />
+                                                                </div>
+                                                                <div class="gdlr-core-testimonial-author-content">
+                                                                    <div
+                                                                        class="gdlr-core-testimonial-title gdlr-core-title-font gdlr-core-skin-title"
+                                                                        style="color: #d32525; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;"
+                                                                    >
+                                                                    {{testimonial.name}}
+                                                                    </div>
+                                                                    <div
+                                                                        class="gdlr-core-testimonial-position gdlr-core-info-font gdlr-core-skin-caption"
+                                                                        style="color: #848484; font-size: 16px; font-style: normal; font-weight: 500;"
+                                                                    >
+                                                                    {{testimonial.companyname}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gdlr-core-pbf-wrapper" style="padding: 95px 0px 115px 0px;" id="gdlr-core-wrapper-6">
+            <div class="gdlr-core-pbf-background-wrap"></div>
+            <div class="gdlr-core-pbf-background-wrap" style="top: 40px;">
+                <div
+                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                    style="background-image: url({% static 'mainwebsite/upload/hp1-news-bg.png'%}); background-repeat: no-repeat; background-position: top center;"
+                    data-parallax-speed="0"
+                ></div>
+            </div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js">
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr" style="padding-bottom: 60px;">
+                                        <span
+                                            class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"
+                                            style="font-size: 14px; font-weight: 500; font-style: normal; letter-spacing: 3px; text-transform: uppercase; color: #d32525;"
+                                        >
+                                            <span class="gdlr-core-title-item-caption-prefix" style="border-color: #d32525; height: 13px; margin-right: 14px;"></span>Industry insights
+                                        </span>
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 42px; font-weight: 500; letter-spacing: 0px; text-transform: none; color: #1b1b1b;">
+                                                Recent News<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" data-skin="HP1 Blog" id="gdlr-core-column-38026">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="margin: -90px 0px 0px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix gdlr-core-style-blog-column-with-frame gdlr-core-item-pdlr" style="padding-bottom: 0px;" id="gdlr-core-blog-25161">
+                                        <div class="gdlr-core-flexslider flexslider gdlr-core-js-2" data-type="carousel" data-column="3" data-move="1" data-nav="navigation-top" data-nav-parent="self">
+                                            <div class="gdlr-core-flexslider-custom-nav gdlr-core-style-navigation-top gdlr-core-right-align">
+                                                <i class="ion-ios-arrow-thin-left flex-prev" style="color: #c6c6c6; padding: 0px 10px 0px 10px; font-size: 50px;"></i>
+                                                <i class="ion-ios-arrow-thin-right flex-next" style="color: #c6c6c6; padding: 0px 10px 0px 10px; font-size: 50px;"></i>
+                                            </div>
+                                            <ul class="slides">
+                                                {% for blog in blogs %}
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="{% url 'blog_details' pk=blog.id%}">
+                                                                <img
+                                                                    src="{{blog.image.url}}"
+                                                                    alt=""
+                                                                    width="600"
+                                                                    height="600"
+                                                                    title="bench-accounting-49025-unsplash"
+                                                                />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="#" rel="tag">M&amp;A</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">{{blog.created}}</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="{% url 'blog_details' pk=blog.id%}">{{blog.title}}</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">{{blog.author}}</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                {% endfor %}
+
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img src="{% static 'mainwebsite/upload/shutterstock_589223597-600x600.jpg'%}" alt="" width="600" height="600" title="shutterstock_589223597" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="#" rel="tag">Financial</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">Retail Jobs Are Still Available</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img src="{% static 'mainwebsite/upload/iStock-956377212-600x600.jpg'%}" alt="" width="600" height="600" title="iStock-956377212" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="#" rel="tag">M&amp;A</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">How To Improve Your Working From Home</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img src="{% static 'mainwebsite/upload/iStock-825150970-600x600.jpg'%}" alt="" width="600" height="600" title="Conference" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="category/technology.html" rel="tag">Technology</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">How 5G’s enhanced reliability and latency</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img
+                                                                    src="{% static 'mainwebsite/upload/QAdTsSj8TOOWzlyLn3Rg_14248396556_aefcd9a926_o-600x600.jpg'%}"
+                                                                    alt=""
+                                                                    width="600"
+                                                                    height="600"
+                                                                    title="QAdTsSj8TOOWzlyLn3Rg_14248396556_aefcd9a926_o"
+                                                                />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="#" rel="tag">Financial</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">Google Cloud not to pry into customer data</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img src="{% static 'mainwebsite/upload/iStock-638219322-600x600.jpg'%}" alt="" width="600" height="600" title="Conference" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="#" rel="tag">M&amp;A</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">Business With Remote Working</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img src="{% static 'mainwebsite/upload/shutterstock_1067103281-600x600.jpg'%}" alt="" width="600" height="600" title="shutterstock_1067103281" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="#" rel="tag">Financial</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">Boosting Your Marketing Team</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="gdlr-core-item-mglr">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-4 gdlr-core-js gdlr-core-left-button gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element gdlr-core-with-thumbnail"
+                                                        style="box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06); -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.06);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image">
+                                                            <a href="singleblog.html">
+                                                                <img src="{% static 'mainwebsite/upload/iStock-491542880-600x600.jpg'%}" alt="" width="600" height="600" title="iStock-491542880" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position clearfix" style="padding-right: 30px; padding-bottom: 40px;">
+                                                            <div class="gdlr-core-blog-grid-top-info clearfix">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
+                                                                    <span class="gdlr-core-head"><i class="icon_folder-alt"></i></span><a href="#" rel="tag">Blog</a><span class="gdlr-core-sep">,</span>
+                                                                    <a href="category/technology.html" rel="tag">Technology</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">14 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 22px; font-weight: 500; letter-spacing: 0px;">
+                                                                <a href="singleblog.html">Best Startup Strategy For 2025</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix"></div>
+                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
+                                                                <span class="gdlr-core-head">By</span><a href="#" title="Posts by John Smith" rel="author">John Smith</a>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first" id="gdlr-core-column-30995">
+                        <div class="gdlr-core-pbf-column-content-margin gdlr-core-js" style="padding: 140px 0px 0px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap"></div>
+                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js" style="max-width: 750px;">
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" style="margin-bottom: 70px;">
+                                        <div class="gdlr-core-divider-container" style="max-width: 180px;"><div class="gdlr-core-divider-line gdlr-core-skin-divider" style="border-color: #d5d5d5;"></div></div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div
+                                        class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"
+                                        style="padding-bottom: 40px;"
+                                        id="gdlr-core-title-item-1"
+                                    >
+                                        <div class="gdlr-core-title-item-title-wrap">
+                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 37px; font-weight: 600; letter-spacing: 0px; text-transform: none; color: #000000;">
+                                                Let’s discuss about how we can partner and make your business better<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                            </h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="gdlr-core-pbf-element">
+                                    <div class="gdlr-core-button-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align" style="padding-bottom: 0px;">
+                                        <a
+                                            class="gdlr-core-button gdlr-core-button-gradient gdlr-core-center-align gdlr-core-button-no-border"
+                                            href="{% url 'contact' %}"
+                                            style="
+                                                font-size: 16px;
+                                                font-weight: 700;
+                                                letter-spacing: 0px;
+                                                color: #ffffff;
+                                                padding: 3px 33px 3px 33px;
+                                                text-transform: none;
+                                                border-radius: 33px;
+                                                -moz-border-radius: 33px;
+                                                -webkit-border-radius: 33px;
+                                                background: #d32525;
+                                            "
+                                        >
+                                            <span class="gdlr-core-content">Contact Us</span><i class="gdlr-core-pos-right ion-ios-arrow-thin-right" style="font-size: 31px; color: #ffffff;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

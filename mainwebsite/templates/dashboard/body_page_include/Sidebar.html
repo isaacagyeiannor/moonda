@@ -1,0 +1,203 @@
+
+{% load static %}
+
+
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar doc-sidebar">
+  <div class="app-sidebar__user clearfix">
+    <div class="dropdown user-pro-body">
+      <div class="user-info">
+        <h2>Zhonghua</h2>
+        <span>Company Limited</span>
+      </div>
+    </div> 
+  </div>
+  <ul class="side-menu">
+    <li class="slide">
+      <a class="side-menu__item" href="{% url 'dashboard' %}"
+        ><i class="side-menu__icon fa fa-tachometer"></i
+        ><span class="side-menu__label">Dashboard</span
+        ></a>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-sliders"></i
+        ><span class="side-menu__label">Sliders</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_sliders' %}" class="slide-item">View Sliders</a>
+        </li>
+        <li>
+          <a href="{% url 'add_slider' %}" class="slide-item">Create Slider</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-home"></i
+        ><span class="side-menu__label">Services</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_services' %}" class="slide-item">View Services</a>
+        </li>
+        <li>
+          <a href="{% url 'add_service' %}" class="slide-item">Create Services</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-book"></i
+        ><span class="side-menu__label">Company summary</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_company_summary' %}" class="slide-item">View summary</a>
+        </li>
+        <li>
+          <a href="{% url 'add_company_summary' %}" class="slide-item">Create summary</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-picture-o"></i
+        ><span class="side-menu__label">Gallery</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_pictures' %}"  class="slide-item">View Gallery</a>
+        </li>
+        <li>
+          <a href="{% url 'add_picture' %}"  class="slide-item">Add Picture</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-comments-o"></i
+        ><span class="side-menu__label">Testimonial</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_testimonials' %}" class="slide-item">View Testimonials</a>
+        </li>
+        <li>
+          <a href="{% url 'add_testimonial' %}" class="slide-item">Create Testimonial</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-rss"></i
+        ><span class="side-menu__label">Blog</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_blogs' %}" class="slide-item">View Blog</a>
+        </li>
+        <li>
+          <a href="{% url 'add_blog'%}" class="slide-item">Create Blog</a>
+        </li>
+        <li>
+          <a href="#" class="slide-item">Blog Categories</a>
+        </li>
+        <li>
+          <a href="#" class="slide-item">Blog Tags</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-envelope"></i
+        ><span class="side-menu__label">Mail</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="#" class="slide-item">Inbox</a>
+        </li>
+        <li>
+          <a href="#" class="slide-item">Send Message</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-building"></i
+        ><span class="side-menu__label">About us</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="#" class="slide-item">View</a>
+        </li>
+        <li>
+          <a href="#" class="slide-item">Create</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-location-arrow"></i
+        ><span class="side-menu__label">Contact us</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{%url 'view_contacts' %}" class="slide-item">View Contact</a>
+        </li>
+        <li>
+          <a href="{%url 'add_contact' %}" class="slide-item">Create Contact</a>
+        </li>
+      </ul>
+    </li>
+    
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-file"></i
+        ><span class="side-menu__label">Action Buttons</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="login.html" class="slide-item">Social Media Links</a>
+        </li>
+        <li>
+          <a href="register.html" class="slide-item">Call Now</a>
+        </li>
+        <li>
+          <a href="forgot-password.html" class="slide-item">Footer notes</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div class="app-sidebar-footer">
+    <a href="emailservices.html">
+      <span class="fa fa-envelope" aria-hidden="true"></span>
+    </a>
+    <a href="profile.html">
+      <span class="fa fa-user" aria-hidden="true"></span>
+    </a>
+    <a href="editprofile.html">
+      <span class="fa fa-cog" aria-hidden="true"></span>
+    </a>
+    <a href="chat.html">
+      <span class="fa fa-comment" aria-hidden="true"></span>
+    </a>
+    <a href="{% url 'logout' %}">
+      <span class="fa fa-sign-in" aria-hidden="true"></span>
+    </a>
+  </div>
+</aside>
+<!-- /Sidebar menu-->

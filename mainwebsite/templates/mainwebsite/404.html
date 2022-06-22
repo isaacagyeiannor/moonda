@@ -1,0 +1,32 @@
+{% extends "mainwebsite/base/base.html" %}
+{% load static  %}
+{% block content %}
+
+                <div class="corzo-page-wrapper" id="corzo-page-wrapper">
+                    <div class="corzo-not-found-wrap" id="corzo-full-no-header-wrap" style="padding-top: 0px; padding-bottom: 0px;">
+                        <div class="corzo-not-found-background">
+                        </div>
+                        <div class="corzo-not-found-container corzo-container">
+                            <div class="corzo-header-transparent-substitute" style="height: 232.359px;">
+                            </div>
+                            <div class="corzo-not-found-content corzo-item-pdlr">
+                                <h1 class="corzo-not-found-head">404</h1>
+                                <h3 class="corzo-not-found-title corzo-content-font">Page Not Found</h3>
+                                <div class="corzo-not-found-caption">
+                                    Sorry, we couldn't find the page you're looking for.
+                                </div>
+                                <form role="search" method="get" class="search-form" action="{% url 'home' %}">
+                                    <input type="text" class="search-field corzo-title-font" placeholder="Type Keywords..." value="" name="s">
+                                    <div class="corzo-top-search-submit">
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <input type="submit" class="search-submit" value="Search">
+                                </form>
+                                <div class="corzo-not-found-back-to-home">
+                                    <a href="{% url 'home' %}">Or Back To Homepage</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endblock %}

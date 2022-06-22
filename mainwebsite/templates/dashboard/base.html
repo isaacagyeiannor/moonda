@@ -1,0 +1,167 @@
+{% load static %}
+
+
+{% block html%}
+<!doctype html>
+<html lang="en">
+
+{% block head%}
+<head>
+
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="Zhonghua Company Limited is an EPE Foam Manufacturer in West Africa" name="description">
+    <meta content="Zhonghua Company Limited" name="author">
+    <meta name="keywords" content="EPE Foam Manufacturer, Mattress producer, cushions"/>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'dashboard/images/brand/favicon.ico' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Title -->
+    <title>Zhonghua Company Limited</title>
+    <link rel="stylesheet" href="{% static 'dashboard/fonts/fonts/font-awesome.min.css' %}">
+
+    <!-- Bootstrap Css -->
+    <link href="{% static 'dashboard/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- Dashboard Css -->
+    <link href="{% static 'dashboard/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'dashboard/css/admin-custom.css'%}" rel="stylesheet" />
+
+    <!-- Sidemenu Css -->
+    <link href="{% static 'dashboard/plugins/toggle-sidebar/sidemenu.css' %}" rel="stylesheet" />
+
+    <!-- Custom scroll bar css-->
+    <link href="{% static 'dashboard/plugins/scroll-bar/jquery.mCustomScrollbar.css' %}" rel="stylesheet" />
+
+    <!--button--> 
+    <link href="{% static 'dashboard/css/buttons.css' %}" rel="stylesheet" />
+    <link href="{% static 'dashboard/css/color.css' %}" rel="stylesheet" />
+
+    <!-- WYSIWYG Editor css -->
+    <link href="{% static 'dashboard/plugins/wysiwyag/richtext.css'%}" rel="stylesheet" />
+
+    <!-- Gallery -->
+	<link href="{% static 'dashboard/plugins/photo-gallery/gallery.css'%}" rel="stylesheet">
+  
+    <!---Font icons-->
+    <link href="{% static 'dashboard/css/icons.css' %}" rel="stylesheet"/>
+    <link href="{% static 'dashboard/css/texteditor.css' %}" rel="stylesheet"/>
+    <link href="{% static 'dashboard/plugins/iconfonts/icons.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'dashboard/fonts/fonts/font-awesome.min.css' %}">
+   
+    {%block extra_style%}{%endblock extra_style%}
+    {%block head_script%}{%endblock head_script%}
+</head>
+{%endblock head%}
+
+
+{%block body%}
+<body class="app sidebar-mini">
+    
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+   <!--Loader-->
+   <div id="global-loader">
+      <img src="{% static 'dashboard/images/loader.svg' %}" class="loader-img" alt="">
+   </div>
+  <!--/Loader-->
+
+
+    {% block page%}
+       	<!--Page-->
+		<div class="page">
+			<div class="page-main">
+             {% include 'dashboard/body_page_include/App-Header.html' %}
+             {% include 'dashboard/body_page_include/Sidebar.html' %}   
+             
+             {%block content%}
+             <!--App-Content-->
+             
+    
+             {%endblock content%}  
+            </div>
+        </div>
+        
+    {%block footer%}
+        <!--Footer-->
+              <footer class="footer">
+                  <div class="container">
+                      <div class="row align-items-center flex-row-reverse">
+                          <div class="col-md-12 col-sm-12 mt-3 mt-lg-0 text-center">
+                              Copyright © 2022 <a href="#">Zhonghua Company Limited</a>. Designed by <a href="https://karlowebsytz.com">Karlo Websytz</a> All rights reserved.
+                          </div>
+                      </div>
+                  </div>
+              </footer>
+              <!-- / Footer-->
+      {%endblock footer%}
+  
+    {% endblock page%}
+
+      {%block script%}
+        <!-- Back to top -->
+       <a href="#top" id="back-to-top"><i class="fa fa-rocket"></i></a>
+
+         <!-- JQuery js-->
+		<script src="{% static 'dashboard/js/vendors/jquery-3.2.1.min.js' %}"></script>
+
+		<!-- Bootstrap js -->
+		<script src="{% static 'dashboard/plugins/bootstrap-4.3.1-dist/js/popper.min.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js' %}"></script>
+
+		<!--JQuery Sparkline Js-->
+		<script src="{% static 'dashboard/js/vendors/jquery.sparkline.min.js' %}"></script>
+
+		<!-- Circle Progress Js-->
+		<script src="{% static 'dashboard/js/vendors/circle-progress.min.js' %}"></script>
+
+		<!-- Star Rating Js-->
+		<script src="{% static 'dashboard/plugins/rating/jquery.rating-stars.js' %}"></script>
+
+		<!--Counters -->
+		<script src="{% static 'dashboard/plugins/counters/counterup.min.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/counters/waypoints.min.js' %}"></script>
+
+		<!-- Fullside-menu Js-->
+		<script src="{% static 'dashboard/plugins/toggle-sidebar/sidemenu.js' %}"></script>
+
+		<!-- CHARTJS CHART -->
+		<script src="{% static 'dashboard/plugins/chart/Chart.bundle.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/chart/utils.js' %}"></script>
+
+		<!-- Custom scroll bar Js-->
+		<script src="{% static 'dashboard/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+		<!-- ECharts Plugin -->
+		<script src="{% static 'dashboard/plugins/echarts/echarts.js' %}"></script>
+		<script src="{% static 'dashboard/plugins/echarts/echarts.js' %}"></script>
+		<script src="{% static 'dashboard/js/index1.js' %}"></script>
+
+        <!-- WYSIWYG Editor js -->
+		<script src="{% static 'dashboard/plugins/wysiwyag/jquery.richtext.js'%}"></script>
+		<script src="{% static 'dashboard/js/formeditor.js'%}"></script>
+
+        <!-- Gallery js -->
+		<script src="{% static 'dashboard/plugins/photo-gallery/gallery.js' %}"></script>
+        <script src="{% static 'dashboard/plugins/photo-gallery/gallery-1.js' %}"></script>
+
+		<!-- Custom Js-->
+		<script src="{% static 'dashboard/js/admin-custom.js' %}"></script>
+      {%endblock script%}
+
+      {%block extra_script%}{%endblock extra_script%}
+
+</body>   
+{%endblock body%}
+</html>
+{% endblock html %}

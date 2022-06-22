@@ -1,0 +1,229 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+
+{% block content%}
+
+				<!-- App-Content-->
+				<div class="app-content  my-3 my-md-5">
+					<div class="side-app">
+
+						<!-- Page-Header-->
+						<div class="page-header">
+							<h1 class="page-title">Our Services</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page">our-services</li>
+							</ol>
+						</div>
+						<!-- /Page-Header-->
+							
+						<div class="row">
+							
+
+							<div class="col-md-12">
+								<div class="card">
+									<div class="card-body items-gallery">
+										<div class="items-blog-tab text-center">
+											<div class="tab-content">
+												<div class="tab-pane active" id="tab-1">
+													<div class="row">
+														{% for service in services %}
+														<div class="col-xl-3 col-lg-6 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img  br-tr-7 br-tl-7">
+																	<img src={{service.image.url}} alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">{{service.created}}.</p>
+																		<h4 class="font-weight-semibold">{{service.serviceNumber}} | {{service.title}}</h4>
+																		<p class="mb-0">{{service.text}}</p>
+																		<hr />
+																		<a href="{% url 'update_service' pk=service.id %}" class="btn btn-primary">Edit</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+														{% endfor %}
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-2">
+													<div class="row">
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img  br-tr-7 br-tl-7">
+																	<img src="../assets/images/products/j1.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/j2.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/f3.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-3">
+													<div class="row">
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img  br-tr-7 br-tl-7">
+																	<img src="../assets/images/products/b1.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/b2.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-4">
+													<div class="row">
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img  br-tr-7 br-tl-7">
+																	<img src="../assets/images/products/h4.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/h2.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/h3.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-5">
+													<div class="row">
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img  br-tr-7 br-tl-7">
+																	<img src="../assets/images/products/f4.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-xl-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/f3.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+														<div class="col-xl-4 col-lg-12 col-md-12">
+															<div class="card mb-0">
+																<div class="item-card8-img">
+																	<img src="../assets/images/products/f2.png" alt="img" class="cover-image">
+																</div>
+																<div class="card-body">
+																	<div class="item-card8-desc">
+																		<p class="text-muted">16 November 2019.</p>
+																		<h4 class="font-weight-semibold">Food &amp; BarRealEstate</h4>
+																		<p class="mb-0">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+
+		<!-- Meta data -->
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="Zhonghua Company Limited" name="description">
+		<meta content="Zhonghua Company Limited" name="author">
+		<meta name="keywords" content="Zhonghua Company Limited"/>
+
+		<!-- Favicon -->
+		<link rel="icon" href="{% static 'dashboard/favicon.ico' %}" type="image/x-icon"/>
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+		<!-- Title -->
+		<title>Zhonghua Company Limited</title>
+
+		<!-- Bootstrap Css -->
+		<link href="{% static 'dashboard/plugins/bootstrap-4.3.1-dist/css/bootstrap.min.css'%}" rel="stylesheet" />
+
+		<!-- Sidemenu Css -->
+		<link href="{% static 'dashboard/plugins/toggle-sidebar/sidemenu.css'%}" rel="stylesheet" />
+
+
+		<!-- Dashboard css -->
+		<link href="{% static 'dashboard/css/style.css'%}" rel="stylesheet" />
+		<link href="{% static 'dashboard/css/admin-custom.css'%}" rel="stylesheet" />
+
+		<!-- c3.js Charts Plugin -->
+		<link href="{% static 'dashboard/plugins/charts-c3/c3-chart.css'%}" rel="stylesheet" />
+
+		<!---Font icons-->
+		<link href="{% static 'dashboard/css/icons.css'%}" rel="stylesheet"/>
+		<link rel="stylesheet" href="{% static 'dashboard/fonts/fonts/font-awesome.min.css'%}">
+
+	</head>
+
+	<body  style="background-image: url({% static 'dashboard/images/background/backgroundcompany.jpg' %}); background-repeat: no-repeat; background-position: top center;">
+		<!--Loader-->
+		<div id="global-loader">
+			<img src="{% static 'dashboard/images/loader.svg'%}" class="loader-img" alt="">
+		</div>
+
+	{% block content %}
+    {% endblock %}
+
+		<!-- JQuery js-->
+		<script src="{% static 'dashboard/js/vendors/jquery-3.2.1.min.js'%}"></script>
+
+		<!-- Bootstrap js -->
+		<script src="{% static 'dashboard/plugins/bootstrap-4.3.1-dist/js/popper.min.js'%}"></script>
+		<script src="{% static 'dashboard/plugins/bootstrap-4.3.1-dist/js/bootstrap.min.js'%}"></script>
+
+		<!--JQuery Sparkline Js-->
+		<script src="{% static 'dashboard/js/vendors/jquery.sparkline.min.js'%}"></script>
+
+		<!-- Circle Progress Js-->
+		<script src="{% static 'dashboard/js/vendors/circle-progress.min.js'%}"></script>
+
+		<!-- Star Rating Js-->
+		<script src="{% static 'dashboard/plugins/rating/jquery.rating-stars.js'%}"></script>
+
+		<!-- Custom scroll bar Js-->
+		<script src="{% static 'dashboard/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+
+		<!-- Fullside-menu Js-->
+		<script src="{% static 'dashboard/plugins/toggle-sidebar/sidemenu.js'%}"></script>
+
+		<!--Counters -->
+		<script src="{% static 'dashboard/plugins/counters/counterup.min.js'%}"></script>
+		<script src="{% static 'dashboard/plugins/counters/waypoints.min.js'%}"></script>
+
+		<!-- Custom Js-->
+		<script src="{% static 'dashboard/js/admin-custom.js'%}"></script>
+
+	</body>
+</html>

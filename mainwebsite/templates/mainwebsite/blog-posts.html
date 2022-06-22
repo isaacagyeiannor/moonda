@@ -1,0 +1,87 @@
+{% extends "mainwebsite/base/base.html" %}
+{% load static  %}
+{% block content %}
+<div class="corzo-page-wrapper" id="corzo-page-wrapper">
+    <div class="gdlr-core-page-builder-body">
+        
+        {% for blog in blogs %}
+        <div class="gdlr-core-pbf-wrapper" style="padding: 370px 0px 160px 0px;" data-skin="white" id="gdlr-core-wrapper-1">
+            <div class="gdlr-core-pbf-background-wrap" style="background-color: #383838;">
+                <div
+                    class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js"
+                    style="opacity: 0.4; background-image: url({{blog.image.url}}); background-size: cover; background-position: center;"
+                    data-parallax-speed="0.3"
+                ></div>
+            </div>
+            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js" data-gdlr-animation="fadeInUp" data-gdlr-animation-duration="600ms" data-gdlr-animation-offset="0.8">
+                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                    <div class="gdlr-core-pbf-element">
+                        <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr">
+                            <div class="gdlr-core-title-item-title-wrap">
+                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title" style="font-size: 75px; font-weight: 600; letter-spacing: 0px; text-transform: none; color: #ffffff;">
+                                    {{blog.title}}<span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                                </h3>
+                            </div>
+                            <span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" style="font-size: 25px; font-style: normal; color: #ffffff; margin-top: 15px;">{{contact.titleTag}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+                
+                <div class="corzo-page-wrapper" id="corzo-page-wrapper">
+                    <div class="gdlr-core-page-builder-body">
+                        <div class="gdlr-core-pbf-wrapper" style="padding: 60px 0px 15px 0px;">
+                            <div class="gdlr-core-pbf-background-wrap" style="background-color: #f7f7f7;"></div>
+                            <div class="gdlr-core-pbf-wrapper-content gdlr-core-js">
+                                <div class="gdlr-core-pbf-wrapper-container clearfix gdlr-core-container">
+                                    <div class="gdlr-core-pbf-element">
+                                        <div class="gdlr-core-blog-item gdlr-core-item-pdb clearfix gdlr-core-style-blog-column-with-frame" style="padding-bottom: 40px;">
+                                            <div class="gdlr-core-blog-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
+                                                {% for blog in blogs %}
+                                                <div class="gdlr-core-item-list gdlr-core-item-pdlr gdlr-core-column-20">
+                                                    <div
+                                                        class="gdlr-core-blog-grid gdlr-core-style-2 gdlr-core-js gdlr-core-blog-grid-with-frame gdlr-core-item-mgb gdlr-core-skin-e-background gdlr-core-outer-frame-element"
+                                                        style="box-shadow: 0 15px 35px rgba(10, 10, 10, 0.07); -moz-box-shadow: 0 15px 35px rgba(10, 10, 10, 0.07); -webkit-box-shadow: 0 15px 35px rgba(10, 10, 10, 0.07);"
+                                                        data-sync-height="blog-item-1"
+                                                    >
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
+                                                            <a href="../2020/10/15/how-5gs-enhanced-reliability-and-latency/index.htm">
+                                                                <img src={{blog.image.url}} alt="" width="600" height="600" title="Conference" />
+                                                            </a>
+                                                        </div>
+                                                        <div class="gdlr-core-blog-grid-frame gdlr-core-sync-height-space-position">
+                                                            <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <span class="gdlr-core-blog-info-sep">•</span><span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="#">15 Oct 20</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" style="font-size: 23px; font-weight: 700; letter-spacing: 0px;">
+                                                                <a href="{% url 'blog_details' pk=blog.id%}">{{blog.title}}</a>
+                                                            </h3>
+                                                            <div class="gdlr-core-blog-content clearfix">
+                                                                {{blog.my_field|truncatechars:300|safe}}
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+                                                
+                                            </div>
+                                            {% comment %} <div class="gdlr-core-pagination gdlr-core-style-circle gdlr-core-left-align gdlr-core-item-pdlr">
+                                                <span aria-current="page" class="page-numbers current">1</span>
+                                                <a class="page-numbers" href="singleblog.html">2</a>
+                                                <a class="next page-numbers" href="singleblog.html"></a>
+                                            </div> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                {% endblock %}

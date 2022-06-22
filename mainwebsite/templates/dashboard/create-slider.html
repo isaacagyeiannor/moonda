@@ -1,0 +1,69 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+{% load widget_tweaks %}
+{% block content%}
+				<!-- App-Content-->
+				<div class="app-content  my-3 my-md-5">
+					<div class="side-app">
+
+						<!-- Page-Header-->
+						<div class="page-header">
+							<h1 class="page-title">Create Slider</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+								<li class="breadcrumb-item active" aria-current="page">create-slider</li>
+							</ol>
+						</div>
+						<!-- /Page-Header-->
+						
+						<div class="row">
+							<div class="col-12">
+								<div   class="card">
+									<div class="card-header">
+										<h3 class="card-title">Create Slider</h3>
+									</div>
+									<form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
+										<div class="card-body">
+											<div class="row">
+												<div class="col-md-6 col-lg-6">
+													<div class="form-group">
+														<label class="form-label">Slider Title</label>
+														{% render_field form.title class="form-control" placeholder="e.g. Summary Title" %}
+													</div>
+													<div class="form-group">
+														<label class="form-label">Light Text</label>
+														{% render_field form.lighttext  class="form-control" placeholder="e.g. Summary number" %}
+													</div>
+													
+													<div class="form-group">
+														<label class="form-label">Rs Number</label>
+														{% render_field form.rsnumber  class="form-control" placeholder="e.g. Summary number" %}
+													</div>
+													
+												</div>
+												<div class="col-md-6 col-lg-6">
+                                                    <div class="form-group">
+														<label class="form-label">Bold text</label>
+														{% render_field form.boldtext class="form-control" placeholder="e.g. 1" %}
+													</div>
+													<div class="form-group">
+														<label class="form-label">Slider Image (1951px by 1246px)</label>
+														{% render_field form.image class="form-control" placeholder="e.g. 1" %}
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="card-footer text-right">
+											<div class="d-flex">
+												<a href="{% url 'view_sliders' %}" class="btn btn-link">Cancel</a>
+												<button type="submit" class="btn btn-primary ml-auto">Submit</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}
