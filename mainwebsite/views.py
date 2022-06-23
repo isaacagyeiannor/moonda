@@ -319,6 +319,14 @@ class BlogPage(ListView):
     context_object_name = 'posts'
     template_name = 'mainwebsite/blog-posts.html'
     
+    queryset = MainBlog.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogPage, self).get_context_data(**kwargs)
+        context['blogs'] = Blog.objects.all()
+        # And so on for more models
+        return context
+    
 class BlogDetailsPage(DetailView):
     template_name = 'mainwebsite/blog-details.html'
     model = Blog
