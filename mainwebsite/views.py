@@ -316,7 +316,7 @@ class ServicesPage(ListView):
 
 class BlogPage(ListView):
     model = Blog
-    context_object_name = 'blogs'
+    context_object_name = 'posts'
     template_name = 'mainwebsite/blog-posts.html'
     
 class BlogDetailsPage(DetailView):
