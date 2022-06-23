@@ -113,6 +113,11 @@ class MainAbout(models.Model):
     siteTitle = models.CharField(max_length=50)
     titleTag = models.CharField(max_length=50)  
     image = models.ImageField(max_length=30, null= True)
+
+class MainBlog(models.Model):
+    siteTitle = models.CharField(max_length=50)
+    titleTag = models.CharField(max_length=50)  
+    image = models.ImageField(max_length=30, null= True)
     
 class MainGallery(models.Model):
     siteTitle = models.CharField(max_length=50)

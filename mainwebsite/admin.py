@@ -33,6 +33,9 @@ class ContactAdmin(admin.ModelAdmin):
 class MainServicesAdmin(admin.ModelAdmin):
     list_display = ('siteTitle',)
 
+class MainBlogAdmin(admin.ModelAdmin):
+    list_display = ('siteTitle',)
+
 class MainAboutAdmin(admin.ModelAdmin):
     list_display = ('siteTitle',)
 
@@ -50,5 +53,6 @@ admin.site.register(models.Testimonial, TestimonialAdmin )
 admin.site.register(models.Blog, BlogsAdmin)
 admin.site.register(models.Contact, ContactAdmin)
 admin.site.register(models.MainServices, MainServicesAdmin)
+admin.site.register(models.MainBlog, MainBlogAdmin)
 admin.site.register(models.MainAbout, MainAboutAdmin)
 admin.site.register(models.MainGallery, MainGalleryAdmin)

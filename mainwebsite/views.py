@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from .forms import BlogsForm, OurServiceForm, SlidersForm, CompanySummaryForm, TestimonialsForm, ContactForm, GalleryForm
-from .models import CompanySummary, Gallery, HomeAboutUs, HomeWhyUs, MainAbout, Sliders, OurServices, Testimonial, Blog, Contact, MainGallery, MainServices
+from .models import CompanySummary, Gallery, HomeAboutUs, HomeWhyUs, MainAbout, MainBlog, Sliders, OurServices, Testimonial, Blog, Contact, MainGallery, MainServices
 
 # Create your views here.
 
@@ -315,7 +315,7 @@ class ServicesPage(ListView):
     template_name = 'mainwebsite/services.html'
 
 class BlogPage(ListView):
-    model = Blog
+    model = MainBlog
     context_object_name = 'posts'
     template_name = 'mainwebsite/blog-posts.html'
     
