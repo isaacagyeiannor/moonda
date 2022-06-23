@@ -61,15 +61,23 @@
                             <a class="corzo-mm-menu-button corzo-mobile-menu-button corzo-mobile-button-hamburger" href="#corzo-mobile-menu"><span></span></a>
                             <div class="corzo-mm-menu-wrap corzo-navigation-font" id="corzo-mobile-menu" data-slide="right">
                                 <ul id="menu-main-navigation" class="m-menu">
-                                    <li
+                                    {% comment %} <li
                                         class="menu-item menu-item-home current-menu-item page_item page-item-12613 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children"
                                     >
                                         <a href="{% url 'home' %}" aria-current="page">Home</a>
+                                    </li> {% endcomment %}
+                                    <li class="menu-item menu-item-has-children">
+                                    <a href="{% url 'home' %}" aria-current="page">Home</a>
                                     </li>
+<<<<<<< HEAD
                                     <li
                                         class="menu-item menu-item-home current-menu-item page_item page-item-12613 current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children"
                                     >
                                         <a href="{% url 'services' %}" aria-current="page"> Services</a>
+=======
+                                    <li class="menu-item menu-item-has-children">
+                                        <a href="{% url 'services' %}">Services</a>
+>>>>>>> parent of 8ae138a (Update base.html)
                                     </li>
                                     <li class="menu-item menu-item-has-children">
                                         <a href="{% url 'blog' %}">Blog</a>
