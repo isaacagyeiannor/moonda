@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wno9!#^ws0n8lmwz2m9#i60e#-71(efk=%r#2i@27p(7tlscd6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['159.65.180.109', 'zhonghuaghana.com', 'www.zhonghuaghana.com']
 
@@ -143,3 +143,5 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = '/dashboard'
 
 SITE_ID=1
+
+CSRF_TRUSTED_ORIGINS = ['http://zhonghuaghana.com', 'https://zhonghuaghana.com']
