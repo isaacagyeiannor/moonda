@@ -40,43 +40,43 @@
 								<p class="text-danger">{{form.errors.slug.as_text}}</p>
 							{% endif %}
 						</div>
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.my_field.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Post</label>
 							{% render_field form.my_field class="content" placeholder="Write your blog posts here..." %}
+							{% if form.errors %}
+								<p class="text-danger">{{form.errors.my_field.as_text}}</p>
+							{% endif %}
 						</div>
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.image.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<div class="form-group">
 								<label class="form-label">Background Image (600px by 600px)</label>
 								{% render_field form.image class="form-control" placeholder="upload image" %}
+								{% if form.errors %}
+								<p class="text-danger">{{form.errors.image.as_text}}</p>
+								{% endif %}
 							</div>
 						</div>
 						<hr />
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.author.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Author</label>
 							{% render_field form.author class="form-control" placeholder="Publisher name" %}
+							{% if form.errors %}
+								<p class="text-danger">{{form.errors.author.as_text}}</p>
+							{% endif %}
 						</div>
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.category.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Category</label>
 							{% render_field form.category class="form-control" placeholder="Enter Category" %}
+							{% if form.errors %}
+								<p class="text-danger">{{form.errors.category.as_text}}</p>
+							{% endif %}
 						</div>
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.tags.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Tags</label>
 							{% render_field form.tags class="form-control" placeholder="Tags (Separate by commas)" %}
+							{% if form.errors %}
+								<p class="text-danger">{{form.errors.tags.as_text}}</p>
+							{% endif %}
 						</div>
 						{% if form.errors %}
 						<div class="alert alert-danger text-center" role="alert">

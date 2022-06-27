@@ -29,10 +29,16 @@
 													<div class="form-group">
 														<label class="form-label">Summary Title</label>
 														{% render_field form.summaryTitle class="form-control" placeholder="e.g. Summary Title" %}
+														{% if form.errors %}
+														<p class="text-danger">{{form.errors.summaryTitle.as_text}}</p>
+														{% endif %}
 													</div>
 													<div class="form-group">
 														<label class="form-label">Summary Number</label>
 														{% render_field form.summaryNumber  class="form-control" placeholder="e.g. Summary number" %}
+														{% if form.errors %}
+														<p class="text-danger">{{form.errors.summaryNumber.as_text}}</p>
+														{% endif %}
 													</div>
 													
 												</div>
@@ -40,10 +46,16 @@
                                                     <div class="form-group">
 														<label class="form-label">Total Number</label>
 														{% render_field form.totalNumber class="form-control" placeholder="e.g. 1" %}
+														{% if form.errors %}
+														<p class="text-danger">{{form.errors.totalNumber.as_text}}</p>
+														{% endif %}
 													</div>
 													<div class="form-group">
 														<label class="form-label">Summary Title</label>
 														{% render_field form.title class="form-control" placeholder="Title ..." %}
+														{% if form.errors %}
+														<p class="text-danger">{{form.errors.title.as_text}}</p>
+														{% endif %}
 													</div>
 												</div>
 											</div>
