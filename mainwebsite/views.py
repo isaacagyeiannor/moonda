@@ -259,6 +259,10 @@ class DetailsContactView(DetailView):
     form_class = ContactForm
     context_object_name = 'contacts' 
     template_name = 'dashboard/contact.html'
+
+#Google Analytics
+class GooglePage(TemplateView):
+    template_name = 'dashboard/google-analytics.html'
     
     
 #Main Website 

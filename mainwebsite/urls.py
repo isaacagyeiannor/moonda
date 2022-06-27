@@ -71,6 +71,8 @@ urlpatterns = [
     path('dashboard/contact/<int:pk>/', login_required(views.DetailsContactView.as_view(), login_url='/login'), name='view_contact'),
     path('dashboard/contact/<int:pk>/edit', login_required(views.UpdateContactView.as_view(), login_url='/login'), name='update_contact'),
     path('dashboard/contact/', login_required(views.ListContactView.as_view(), login_url='/login'), name='view_contacts'),
-
+    
+    #Google Analytics
+    path('dashboard/analytics/', login_required(views.GooglePage.as_view(), login_url='/login'), name='analytics'),
   
 ]
