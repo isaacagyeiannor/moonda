@@ -145,3 +145,5 @@ LOGIN_REDIRECT_URL = '/dashboard'
 SITE_ID=1
 
 CSRF_TRUSTED_ORIGINS = ['http://zhonghuaghana.com', 'https://zhonghuaghana.com']
+
+GOOGLE_ANALYTICS_KEY = os.environ.get("G-DL9Y7JDM8B")
