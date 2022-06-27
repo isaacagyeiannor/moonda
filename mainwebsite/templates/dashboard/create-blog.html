@@ -26,19 +26,19 @@
 					<form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
 					
 					<div class="card-body">
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.title.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Blog Title</label>
 							{% render_field form.title class="form-control" placeholder="Blog Title" %}
+							{% if form.errors %}
+							<p class="text-danger">{{form.errors.title.as_text}}</p>
+							{% endif %}
 						</div>
-						{% if form.errors %}
-							<p class="text-danger">{{form.errors.slug.as_text}}</p>
-						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Url</label>
 							{% render_field form.slug class="form-control" placeholder="blog url" %}
+							{% if form.errors %}
+								<p class="text-danger">{{form.errors.slug.as_text}}</p>
+							{% endif %}
 						</div>
 						{% if form.errors %}
 							<p class="text-danger">{{form.errors.my_field.as_text}}</p>
