@@ -26,18 +26,30 @@
 					<form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
 					
 					<div class="card-body">
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.title.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Blog Title</label>
 							{% render_field form.title class="form-control" placeholder="Blog Title" %}
 						</div>
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.slug.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Url</label>
 							{% render_field form.slug class="form-control" placeholder="blog url" %}
 						</div>
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.my_field.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Post</label>
 							{% render_field form.my_field class="content" placeholder="Write your blog posts here..." %}
 						</div>
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.image.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<div class="form-group">
 								<label class="form-label">Background Image (600px by 600px)</label>
@@ -45,18 +57,32 @@
 							</div>
 						</div>
 						<hr />
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.author.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Author</label>
 							{% render_field form.author class="form-control" placeholder="Publisher name" %}
 						</div>
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.category.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Category</label>
 							{% render_field form.category class="form-control" placeholder="Enter Category" %}
 						</div>
+						{% if form.errors %}
+							<p class="text-danger">{{form.errors.tags.as_text}}</p>
+						{% endif %}
 						<div class="form-group">
 							<label class="form-label">Tags</label>
 							{% render_field form.tags class="form-control" placeholder="Tags (Separate by commas)" %}
 						</div>
+						{% if form.errors %}
+						<div class="alert alert-danger text-center" role="alert">
+							Error: Review your input
+						</div>
+						{% endif %}
 						<div class="card-footer text-right">
 							<div class="d-flex">
 								<a href="{% url 'view_blogs' %}" class="btn btn-link">Cancel</a>
