@@ -263,6 +263,7 @@ class DetailsCommentView(DetailView):
 #Dashboard Delete Blogs
 class DeleteCommentView(DeleteView): 
     model = Comment
+    form_class = CommentForm
     template_name = 'dashboard/delete-comment.html'
     success_url = '/dashboard/comments'
 
