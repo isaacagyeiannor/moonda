@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'tinymce',
     'taggit',
     '_tkinter',
+    'crispy_forms',
     
     #APPS
     'mainwebsite',
@@ -145,3 +146,5 @@ LOGIN_REDIRECT_URL = '/dashboard'
 SITE_ID=1
 
 CSRF_TRUSTED_ORIGINS = ['http://zhonghuaghana.com', 'https://zhonghuaghana.com']
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
