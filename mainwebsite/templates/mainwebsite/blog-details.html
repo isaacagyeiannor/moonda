@@ -88,7 +88,7 @@
                                                 </div>
                                                 {% else %}
                                                 <h5>Leave a comment</h5>
-                                                <form method="post" style="margin-top: 1.3em;">
+                                                <form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
                                                   
                                                   {% comment %} {{ comment_form.as_p }} {% endcomment %}
                                                   <div class="form-group">
