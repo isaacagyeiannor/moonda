@@ -341,7 +341,7 @@ class BlogDetailsPage(DetailView):
     def get_context_data(self, **kwargs):
         context = super(BlogDetailsPage, self).get_context_data(**kwargs)
         context['comments'] = Comment.objects.all()
-        context['form'] = CommentForm()
+        context['form'] = CommentForm
         # And so on for more models
         return context
     
