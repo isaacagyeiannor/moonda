@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 
-from .forms import BlogsForm, OurServiceForm, SlidersForm, CompanySummaryForm, TestimonialsForm, ContactForm, GalleryForm
+from .forms import BlogsForm, OurServiceForm, SlidersForm, CompanySummaryForm, TestimonialsForm, ContactForm, GalleryForm, CommentForm
 from .models import Comment, CompanySummary, Gallery, HomeAboutUs, HomeWhyUs, MainAbout, MainBlog, Sliders, OurServices, Testimonial, Blog, Contact, MainGallery, MainServices
 
 # Create your views here.
@@ -335,6 +335,7 @@ class BlogDetailsPage(DetailView):
     template_name = 'mainwebsite/blog-details.html'
     model = Blog
     context_object_name = 'blogs'
+    form_class = CommentForm
     
     queryset = Blog.objects.all()
 
