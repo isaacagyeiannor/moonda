@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView
 from django.views.generic.edit import DeleteView
@@ -335,17 +335,27 @@ class BlogDetailsPage(DetailView):
     template_name = 'mainwebsite/blog-details.html'
     model = Blog
     context_object_name = 'blogs'
-    form_class = CommentForm
-    success_url = 'blog_details'
     
     queryset = Blog.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super(BlogDetailsPage, self).get_context_data(**kwargs)
         context['comments'] = Comment.objects.all()
+        context['form'] = CommentForm()
         # And so on for more models
         return context
     
+# class CommentCreateView(CreateView):
+#     model = Comment
+#     form_class = CommentForm
+
+#     def get_success_URL(self):
+#         return reverse ('request: detail', kwargs = {'slug':self.object.post.slug})
+
+#     def form_valid(self, form):
+#         post = get_object_or_404(Request, slug = self.kwargs ['slug'])
+#         Form.instance.post = Request
+#         return super().form_valid(form)
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
