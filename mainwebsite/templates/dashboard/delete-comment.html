@@ -14,7 +14,7 @@
         </div>
         <!-- /Page-Header-->
         <form method='post'>{% csrf_token %}
-            <p>Are you sure you want to delete "{{form.name}}"</p>
+            <p>Are you sure you want to delete "{{comments.name}}"</p>
             <p>This action cannot be undone</p>
             <input type="submit" class="btn btn-warning" value="Confirm" />
             <a href="{% url 'view_comments' %}"  class="btn btn-danger">Cancel</a>
