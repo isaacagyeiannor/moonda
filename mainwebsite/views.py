@@ -377,9 +377,15 @@ class BlogDetailsPage(DetailView):
     def get_context_data(self, **kwargs):
         context = super(BlogDetailsPage, self).get_context_data(**kwargs)
         context['comments'] = Comment.objects.all()
-        context['form'] = CommentForm
+        context['form'] = CreateCommentView()
         # And so on for more models
         return context
+
+# class CreateCommentView(CreateView): 
+#     model = Comment
+#     form_class = CommentForm
+#     template_name = 'dashboard/create-comment.html'
+#     success_url = '/dashboard/comments'
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
