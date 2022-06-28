@@ -6,10 +6,10 @@
 
         <!-- Page-Header-->
         <div class="page-header">
-            <h1 class="page-title">Testimonials</h1>
+            <h1 class="page-title">Comments</h1>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">testimonials</li>
+                <li class="breadcrumb-item active" aria-current="page">Comments</li>
             </ol>
         </div>
         <!-- /Page-Header-->
@@ -22,7 +22,7 @@
                         <h3 class="card-title">{{ comment.name }}</h3>
                         <div class="card-options">
                             <label class="custom-switch m-0">
-                                <input type="checkbox" value="1" class="custom-switch-input" checked>
+                                <input type="checkbox" value="{{ comment.active }}" class="custom-switch-input" checked>
                                 <span class="custom-switch-indicator"></span>
                             </label>
                         </div>
@@ -32,6 +32,10 @@
                         <small class="text-muted">
                             <cite title="Source Title">- {{ comment.created_on }}</cite>
                         </small>
+                    </div>
+                    <div class="ml-auto text-muted">
+                        <a href="{% url 'delete_comment' pk=comment.id %}" class="icon d-none d-md-inline-block ml-3"><i class="fa fa-trash"></i></a>
+                        <a href="{% url 'update_comment' pk=comment.id %}" class="icon d-none d-md-inline-block ml-3"><i class="fa fa-pencil"></i></a>
                     </div>
                 </div>
             </div>
