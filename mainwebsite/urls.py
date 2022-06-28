@@ -46,6 +46,13 @@ urlpatterns = [
     path('dashboard/testimonials/', login_required(views.ListTestimonialsView.as_view(), login_url='/login'), name='view_testimonials'),
     path('dashboard/testimonials/<int:pk>/delete', login_required(views.DeleteTestimonialsView.as_view(), login_url='/login'), name='delete_testimonial'),
 
+    #Our Comments CRUD
+    path('dashboard/create-comment/', login_required(views.CreateCommentView.as_view(), login_url='/login'), name='add_comment'),
+    path('dashboard/comments/<int:pk>/', login_required(views.DetailsCommentView.as_view(), login_url='/login'), name='update_comment'),
+    path('dashboard/comments/<int:pk>/edit', login_required(views.UpdateCommentView.as_view(), login_url='/login'), name='update_comments'),
+    path('dashboard/comments/', login_required(views.ListCommentView.as_view(), login_url='/login'), name='view_comments'),
+    path('dashboard/comments/<int:pk>/delete', login_required(views.DeleteCommentView.as_view(), login_url='/login'), name='delete_comment'),
+    
     #Sliders CRUD
     path('dashboard/create-slider/', login_required(views.CreateSlidersView.as_view(), login_url='/login'), name='add_slider'),
     path('dashboard/sliders/<int:pk>/', login_required(views.DetailsSlidersView.as_view(), login_url='/login'), name='update_slider'),

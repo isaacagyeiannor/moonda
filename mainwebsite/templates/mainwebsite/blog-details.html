@@ -85,7 +85,7 @@
                                                 <div class="alert alert-success" role="alert">
                                                   Your comment is awaiting moderation
                                                 </div>
-                                                {% else %}
+                                                {% endif %}
                                                 <h5>Leave a comment</h5>
                                                 <form method="post" action = "{% url 'blog_details' pk=blog.id%}}" style="margin-top: 1.3em;">{% csrf_token %}
                                                   <div class="form-group">
@@ -102,7 +102,7 @@
                                                   </div>
                                                   <button type="submit" class="btn btn-danger  btn-lg">Post Comment</button>
                                                 </form>
-                                                {% endif %}
+                                                {% endfor %}
                                               </div>
                                             </div>
                                           </div>

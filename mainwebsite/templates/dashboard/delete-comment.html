@@ -1,0 +1,83 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+{% block content%}
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+
+        <!-- Page-Header-->
+        <div class="page-header">
+            <h1 class="page-title">Testimonials</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">testimonials</li>
+            </ol>
+        </div>
+        <!-- /Page-Header-->
+        <form method='post'>{% csrf_token %}
+            <p>Are you sure you want to delete "{{notes.testimonialTitle}}"</p>
+            <p>This action cannot be undone</p>
+            <input type="submit" class="btn btn-warning" value="Confirm" />
+            <a href="{% url 'view_testimonials' %}"  class="btn btn-danger">Cancel</a>
+        </form>
+
+        <div class="row">
+            {% for testimonial in testimonials %}
+            <div class="col-lg-3">
+                <div class="card card-profile cover-image "  data-image-src="{% static "dashboard/images/photos/gradient3.jpg"%}">
+                    <div class="card-body text-center">
+                        <img class="card-profile-img" src={{testimonial.image.url}} alt="img">
+                        <h3 class="mb-1 text-white">{{testimonial.name}}</h3>
+                        <p class="mb-2 text-white">{{testimonial.companyName}}</p>
+                        <a class="btn btn-primary text-white btn-sm mt-2">
+                            <span class="fa fa-trash"></span> Delete
+                        </a>
+                        <a href="{% url 'update_testimonials' pk=testimonial.id%} " class="btn btn-success btn-sm mt-2"><i class="fa fa-pencil" aria-hidden="true"></i> Edit Testimony</a>
+                    </div>
+                </div>
+                {% comment %} <div class="card p-5 ">
+                    <div class="card-title">
+                        Contact &amp; Personal Info
+                    </div>
+                    <div class="media-list">
+                        <div class="media mt-1 pb-2">
+                            <div class="mediaicon">
+                                <i class="fa fa-link" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-body ml-5 p-1">
+                                <h6 class="mediafont text-dark">Websites</h6><a class="d-block" href="">http://Reallist.com</a> <a class="d-block" href="">http://Reallist.net</a>
+                            </div>
+                            <!-- media-body -->
+                        </div>
+                        <!-- media -->
+
+                        <!-- media -->
+                        <div class="media mt-1 pb-2">
+                            <div class="mediaicon">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-body p-1 ml-5">
+                                <h6 class="mediafont text-dark">Email </h6><span class="d-block">rubin@info.com</span>
+                            </div>
+                            <!-- media-body -->
+                        </div>
+                        <!-- media -->
+                        <div class="media mt-1">
+                            <div class="mediaicon">
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </div>
+                            <div class="card-body p-1 ml-5">
+                                <h6 class="mediafont text-dark">Twitter</h6><a class="d-block" href="#">@Reallist</a>
+                            </div>
+                            <!-- media-body -->
+                        </div>
+                        <!-- media -->
+                    </div>
+                    <!-- media-list -->
+                </div> {% endcomment %}
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

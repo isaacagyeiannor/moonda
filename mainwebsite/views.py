@@ -230,7 +230,41 @@ class DeleteGalleryView(DeleteView):
     model = Gallery
     template_name = 'dashboard/delete-picture.html'
     success_url = '/dashboard/gallery'
+
+#COMMENT CRUD
+#Dashboard List Comment
+class ListCommentView(ListView): 
+    model = Comment
+    form_class = CommentForm
+    context_object_name = 'comments' 
+    template_name = "dashboard/comments.html"
+ 
+#Dashboard Create Comment
+class CreateCommentView(CreateView): 
+    model = Comment
+    form_class = BlogsForm
+    template_name = 'dashboard/create-comment.html'
+    success_url = '/dashboard/comments'
+       
+#Dashboard Update Comment
+class UpdateCommentView(UpdateView): 
+    model = Comment
+    form_class = CommentForm
+    template_name = 'dashboard/create-comment.html'
+    success_url = '/dashboard/comments'
     
+#Dashboard Details Comment
+class DetailsCommentView(DetailView): 
+    model = Comment
+    form_class = CommentForm
+    context_object_name = 'comments' 
+    template_name = 'dashboard/view-comment.html'
+
+#Dashboard Delete Blogs
+class DeleteCommentView(DeleteView): 
+    model = Comment
+    template_name = 'dashboard/delete-blog.html'
+    success_url = '/dashboard/comments'
 
 #CONTACT CRUD
 #Dashboard List Contact

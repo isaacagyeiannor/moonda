@@ -1,0 +1,43 @@
+{% extends 'dashboard/base.html'%}
+{% load static %}
+{% block content%}
+<div class="app-content  my-3 my-md-5">
+    <div class="side-app">
+
+        <!-- Page-Header-->
+        <div class="page-header">
+            <h1 class="page-title">Testimonials</h1>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">testimonials</li>
+            </ol>
+        </div>
+        <!-- /Page-Header-->
+
+        <div class="row">
+            {% for comment in comments %}
+            <div class="col-md-12 col-xl-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ comment.name }}</h3>
+                        <div class="card-options">
+                            <label class="custom-switch m-0">
+                                <input type="checkbox" value="1" class="custom-switch-input" checked>
+                                <span class="custom-switch-indicator"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        {{ comment.body }}
+                        <small class="text-muted">
+                            <cite title="Source Title">- {{ comment.created_on }}</cite>
+                        </small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+{% endblock %}

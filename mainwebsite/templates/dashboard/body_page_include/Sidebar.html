@@ -28,6 +28,21 @@
     </li>
     <li class="slide">
       <a class="side-menu__item" data-toggle="slide" href="#"
+        ><i class="side-menu__icon fa fa-comment"></i
+        ><span class="side-menu__label">Comments</span
+        ><i class="angle fa fa-angle-right"></i
+      ></a>
+      <ul class="slide-menu">
+        <li>
+          <a href="{% url 'view_comments' %}" class="slide-item">View Comments</a>
+        </li>
+        <li>
+          <a href="{% url 'add_comment' %}" class="slide-item">Create Comment</a>
+        </li>
+      </ul>
+    </li>
+    <li class="slide">
+      <a class="side-menu__item" data-toggle="slide" href="#"
         ><i class="side-menu__icon fa fa-sliders"></i
         ><span class="side-menu__label">Sliders</span
         ><i class="angle fa fa-angle-right"></i
