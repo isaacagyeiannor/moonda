@@ -345,42 +345,6 @@ class BlogDetailsPage(DetailView):
         context['form'] = CommentForm
         # And so on for more models
         return context
-
-class PostComment(SingleObjectMixin, FormView):
-    model = Blog
-    form_class = CommentForm
-    template_name = 'blog-detail.html'
-
-    def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        return super().post(request, *args, **kwargs)
-
-    def get_form_kwargs(self):
-        kwargs = super(PostComment, self).get_form_kwargs()
-        kwargs['request'] = self.request
-        return kwargs
-
-    def form_valid(self, form):
-        comment = form.save(commit=False)
-        comment.post = self.object
-        comment.save()
-        return super().form_valid(form)
-
-    def get_success_url(self):
-        post = self.get_object()
-        return reverse('post_detail', kwargs={'pk': post.pk}) + '#comments'
-    
-# class CommentCreateView(CreateView):
-#     model = Comment
-#     form_class = CommentForm
-
-#     def get_success_URL(self):
-#         return reverse ('request: detail', kwargs = {'slug':self.object.post.slug})
-
-#     def form_valid(self, form):
-#         post = get_object_or_404(Request, slug = self.kwargs ['slug'])
-#         Form.instance.post = Request
-#         return super().form_valid(form)
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
