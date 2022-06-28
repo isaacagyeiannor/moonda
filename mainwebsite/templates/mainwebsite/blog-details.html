@@ -90,9 +90,17 @@
                                                 <h5>Leave a comment</h5>
                                                 <form method="post" style="margin-top: 1.3em;">
                                                   
-                                                  {{ comment_form.as_p }}
+                                                  {% comment %} {{ comment_form.as_p }} {% endcomment %}
                                                   <div class="form-group">
-                                                    <label class="form-label">Post</label>
+                                                    <label class="form-label">Name</label>
+                                                    {% render_field comment_form.name class="content" placeholder="Your name" %}
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label class="form-label">Email</label>
+                                                    {% render_field comment_form.email class="content" placeholder="Your email." %}
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label class="form-label">Comment</label>
                                                     {% render_field comment_form.body class="content" placeholder="Write your comment here..." %}
                                                   </div>
                                                   {% csrf_token %}
