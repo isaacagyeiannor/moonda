@@ -79,16 +79,20 @@
                                                 {% endfor %}
                                               </div>
                                             </div>
-                                            {% comment %} <div class="col-md-12 card mb-4  mt-3 ">
+                                            <div class="col-md-12 card mb-4  mt-3 ">
                                               <div class="card-body">
-                                                {% if new_comment %}
+                                                {% comment %} {% if new_comment %}
                                                 <div class="alert alert-success" role="alert">
                                                   Your comment is awaiting moderation
                                                 </div>
-                                                {% endif %}
+                                                {% endif %} {% endcomment %}
                                                 <h5>Leave a comment</h5>
-                                                <form method="post" action = "{% url 'blog_details' pk=blog.id%}}" style="margin-top: 1.3em;">{% csrf_token %}
-                                                  <div class="form-group">
+                                                <form method="post" action = "{% url 'blog_details' pk=blog.id %}" style="margin-top: 1.3em;" >{% csrf_token %}
+                                                    <div class="form-group">
+                                                        <label class="form-label">Name</label>
+                                                        {% render_field form.name class="form-control" placeholder="Your Name" %}
+                                                      </div>
+                                                    <div class="form-group">
                                                     <label class="form-label">Name</label>
                                                     {% render_field form.name class="form-control" placeholder="Your Name" %}
                                                   </div>
@@ -102,9 +106,8 @@
                                                   </div>
                                                   <button type="submit" class="btn btn-danger  btn-lg">Post Comment</button>
                                                 </form>
-                                                {% endfor %}
                                               </div>
-                                            </div> {% endcomment %}
+                                            </div>
                                           </div>
                                         </div>
                                     
