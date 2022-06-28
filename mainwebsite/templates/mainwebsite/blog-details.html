@@ -63,7 +63,7 @@
                                             <div class="col-md-12 card mb-4  mt-3 ">
                                               <div class="card-body">
                                                 <!-- comments -->
-                                                <h2>{{ comments.count }} comments</h2>
+                                                <h5>{{ comments.count }} comments</h5>
                                         
                                                 {% for comment in comments %}
                                                 <div class="comments" style="padding: 10px;">
@@ -85,7 +85,7 @@
                                                   Your comment is awaiting moderation
                                                 </div>
                                                 {% else %}
-                                                <h3>Leave a comment</h3>
+                                                <h5>Leave a comment</h5>
                                                 <form method="post" style="margin-top: 1.3em;">
                                                   {{ comment_form.as_p }}
                                                   {% csrf_token %}
