@@ -383,6 +383,7 @@ class BlogDetailsPage(DetailView):
 
 class CreateBlogDetailsCommentView(CreateView): 
     model = Comment
+    context_object_name = 'forms'
     form_class = CommentForm
     template_name = 'mainwebsite/blog-details.html'
     success_url = '/blog'
