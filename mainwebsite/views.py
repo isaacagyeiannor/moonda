@@ -374,7 +374,7 @@ class BlogPage(ListView):
     
     
 def post_detail(request, slug):
-    template_name = 'blog-details.html'
+    template_name = 'mainwebsite/blog-details.html'
     post = get_object_or_404(Blog, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
