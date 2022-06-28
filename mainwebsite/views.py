@@ -242,7 +242,7 @@ class ListCommentView(ListView):
 #Dashboard Create Comment
 class CreateCommentView(CreateView): 
     model = Comment
-    form_class = BlogsForm
+    form_class = CommentForm
     template_name = 'dashboard/create-comment.html'
     success_url = '/dashboard/comments'
        
