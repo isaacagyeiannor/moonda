@@ -367,32 +367,35 @@ class BlogPage(ListView):
         # And so on for more models
         return context
     
-class BlogDetailsPage(DetailView):
-    template_name = 'mainwebsite/blog-details.html'
-    model = Blog
-    context_object_name = 'blogs'
+# class BlogDetailsPage(DetailView):
+#     template_name = 'mainwebsite/blog-details.html'
+#     model = Blog
+#     context_object_name = 'blogs'
     
-    queryset = Blog.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super(BlogDetailsPage, self).get_context_data(**kwargs)
-        context['comments'] = Comment.objects.all()
-        context['form'] = CommentForm()
-        # And so on for more models
-        return context
-
-class CreateBlogDetailsCommentView(CreateView): 
-    model = Comment
-    form_class = CommentForm
-    template_name = 'mainwebsite/blog-details.html'
     
-    def get_success_URL(self):
-        return reverse ('request: detail', kwargs = {'slug':self.object.post.slug})
+def post_detail(request, slug):
+    template_name = 'blog-details.html'
+    post = get_object_or_404(Blog, slug=slug)
+    comments = post.comments.filter(active=True)
+    new_comment = None
+    # Comment posted
+    if request.method == 'POST':
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
 
-    def form_valid(self, form):
-        post = get_object_or_404(Comment, slug = self.kwargs ['slug'])
-        form.instance.post = Comment
-        return super().form_valid(form)
+            # Create Comment object but don't save to database yet
+            new_comment = comment_form.save(commit=False)
+            # Assign the current post to the comment
+            new_comment.post = post
+            # Save the comment to the database
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+
+    return render(request, template_name, {'post': post,
+                                           'comments': comments,
+                                           'new_comment': new_comment,
+                                           'comment_form': comment_form})
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
