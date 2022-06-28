@@ -385,7 +385,7 @@ class CreateBlogDetailsCommentView(CreateView):
     model = Comment
     form_class = CommentForm
     template_name = 'mainwebsite/blog-details.html'
-    success_url = '{% url '' %}'
+    success_url = '/blog'
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
