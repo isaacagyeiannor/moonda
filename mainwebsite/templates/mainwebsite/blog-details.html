@@ -87,9 +87,8 @@
                                                 </div>
                                                 {% else %}
                                                 <h5>Leave a comment</h5>
-                                                <form method="post" style="margin-top: 1.3em;">
+                                                <form method="post" style="margin-top: 1.3em;">{% csrf_token %}
                                                   {{ form.as_p }}
-                                                  {% csrf_token %}
                                                   <div class="form-group">
                                                     <label class="form-label">Name</label>
                                                     {% render_field form.name class="form-control" placeholder="Your Name" %}
@@ -102,7 +101,7 @@
                                                     <label class="form-label">Comment</label>
                                                     {% render_field form.body class="form-control" placeholder="Your Comment" %}
                                                   </div>
-                                                  <button type="submit" class="btn btn-danger  btn-lg">Submit</button>
+                                                  <button type="submit" class="btn btn-danger  btn-lg">Post Comment</button>
                                                 </form>
                                                 {% endif %}
                                               </div>

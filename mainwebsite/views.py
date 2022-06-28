@@ -336,6 +336,7 @@ class BlogDetailsPage(DetailView):
     model = Blog
     context_object_name = 'blogs'
     form_class = CommentForm
+    success_url = 'blog_details'
     
     queryset = Blog.objects.all()
 
