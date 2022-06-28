@@ -48,8 +48,8 @@ urlpatterns = [
 
     #Our Comments CRUD
     path('dashboard/create-comment/', login_required(views.CreateCommentView.as_view(), login_url='/login'), name='add_comment'),
-    path('dashboard/comments/<int:pk>/', login_required(views.DetailsCommentView.as_view(), login_url='/login'), name='update_comment'),
-    path('dashboard/comments/<int:pk>/edit', login_required(views.UpdateCommentView.as_view(), login_url='/login'), name='update_comments'),
+    path('dashboard/comments/<int:pk>/', login_required(views.DetailsCommentView.as_view(), login_url='/login'), name='view_comment'),
+    path('dashboard/comments/<int:pk>/edit', login_required(views.UpdateCommentView.as_view(), login_url='/login'), name='update_comment'),
     path('dashboard/comments/', login_required(views.ListCommentView.as_view(), login_url='/login'), name='view_comments'),
     path('dashboard/comments/<int:pk>/delete', login_required(views.DeleteCommentView.as_view(), login_url='/login'), name='delete_comment'),
     
