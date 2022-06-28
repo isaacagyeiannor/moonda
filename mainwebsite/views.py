@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 from .forms import BlogsForm, OurServiceForm, SlidersForm, CompanySummaryForm, TestimonialsForm, ContactForm, GalleryForm
-from .models import CompanySummary, Gallery, HomeAboutUs, HomeWhyUs, MainAbout, MainBlog, Sliders, OurServices, Testimonial, Blog, Contact, MainGallery, MainServices
+from .models import Comment, CompanySummary, Gallery, HomeAboutUs, HomeWhyUs, MainAbout, MainBlog, Sliders, OurServices, Testimonial, Blog, Contact, MainGallery, MainServices
 
 # Create your views here.
 
@@ -335,6 +335,15 @@ class BlogDetailsPage(DetailView):
     template_name = 'mainwebsite/blog-details.html'
     model = Blog
     context_object_name = 'blogs'
+    
+    queryset = Blog.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(BlogDetailsPage, self).get_context_data(**kwargs)
+        context['comments'] = Comment.objects.all()
+        # And so on for more models
+        return context
+    
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
