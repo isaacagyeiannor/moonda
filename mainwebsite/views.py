@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.views import LoginView, LogoutView
@@ -344,6 +344,9 @@ class BlogDetailsPage(DetailView):
         context['form'] = CommentForm
         # And so on for more models
         return context
+    
+    def get_absolute_url(self):
+        return reverse('blog_details', args=[str(self.pk)])
     
 # class CommentCreateView(CreateView):
 #     model = Comment
