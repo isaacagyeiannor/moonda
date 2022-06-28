@@ -381,11 +381,11 @@ class BlogDetailsPage(DetailView):
         # And so on for more models
         return context
 
-# class CreateCommentView(CreateView): 
-#     model = Comment
-#     form_class = CommentForm
-#     template_name = 'dashboard/create-comment.html'
-#     success_url = '/dashboard/comments'
+class CreateBlogDetailsCommentView(CreateView): 
+    model = Comment
+    form_class = CommentForm
+    template_name = 'mainwebsite/blog-details.html'
+    success_url = '{% url '' %}'
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'
