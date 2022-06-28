@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy, reverse
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView, FormView
 from django.views.generic.edit import DeleteView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.views.generic.detail import SingleObjectMixin
 
 
 from .forms import BlogsForm, OurServiceForm, SlidersForm, CompanySummaryForm, TestimonialsForm, ContactForm, GalleryForm, CommentForm
@@ -344,9 +345,30 @@ class BlogDetailsPage(DetailView):
         context['form'] = CommentForm
         # And so on for more models
         return context
-    
-    def get_absolute_url(self):
-        return reverse('blog_details', args=[str(self.pk)])
+
+class PostComment(SingleObjectMixin, FormView):
+    model = Blog
+    form_class = CommentForm
+    template_name = 'blog-detail.html'
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().post(request, *args, **kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super(PostComment, self).get_form_kwargs()
+        kwargs['request'] = self.request
+        return kwargs
+
+    def form_valid(self, form):
+        comment = form.save(commit=False)
+        comment.post = self.object
+        comment.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        post = self.get_object()
+        return reverse('post_detail', kwargs={'pk': post.pk}) + '#comments'
     
 # class CommentCreateView(CreateView):
 #     model = Comment
