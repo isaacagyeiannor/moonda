@@ -1,6 +1,6 @@
 from importlib.resources import contents
 from django import forms
-from .models import Blog, CompanySummary, Contact, Gallery, OurServices, Sliders, HomeAboutUs, HomeWhyUs, Testimonial
+from .models import Blog, Comment, CompanySummary, Contact, Gallery, OurServices, Sliders, HomeAboutUs, HomeWhyUs, Testimonial
 
 class OurServiceForm(forms.ModelForm):
 
@@ -56,11 +56,7 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = ["siteTitle", "image",  "titleTag", "pageTitle" , "contactUs", "locationHeading", "locationText", "locationSubText", "email", "phoneNumber", "mapUrl"]
     
-# class CommentForm(forms.ModelForm):
-#     content = forms.CharField(widget=forms.Textarea(attrs={
-#         'rows': '4',                                                
-#     }))
-                                          
-#     class Meta:
-#         model = Comment
-#         fields = [  "content",]
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('name', 'email', 'body')

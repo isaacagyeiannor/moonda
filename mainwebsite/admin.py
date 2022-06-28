@@ -41,7 +41,16 @@ class MainAboutAdmin(admin.ModelAdmin):
 
 class MainGalleryAdmin(admin.ModelAdmin):
     list_display = ('siteTitle',)
-    
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('name', 'body', 'post', 'created_on', 'active')
+    list_filter = ('active', 'created_on')
+    search_fields = ('name', 'email', 'body')
+    actions = ['approve_comments']
+
+    def approve_comments(self, request, queryset):
+        queryset.update(active=True)
+        
 admin.site.register(models.Sliders, SlidersAdmin)
 admin.site.register(models.OurServices, OurServicesAdmin)
 admin.site.register(models.HomeAboutUs, HomeAboutUsAdmin)
@@ -49,6 +58,7 @@ admin.site.register(models.HomeWhyUs, HomeWhyUsAdmin)
 admin.site.register(models.CompanySummary, CompanySummaryAdmin )
 admin.site.register(models.Gallery, GalleryAdmin )
 admin.site.register(models.Testimonial, TestimonialAdmin )
+admin.site.register(models.Comment, CommentAdmin )
 
 admin.site.register(models.Blog, BlogsAdmin)
 admin.site.register(models.Contact, ContactAdmin)
