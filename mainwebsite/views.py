@@ -383,10 +383,16 @@ class BlogDetailsPage(DetailView):
 
 class CreateBlogDetailsCommentView(CreateView): 
     model = Comment
-    context_object_name = 'forms'
     form_class = CommentForm
     template_name = 'mainwebsite/blog-details.html'
-    success_url = '/blog'
+    
+    def get_success_URL(self):
+        return reverse ('request: detail', kwargs = {'slug':self.object.post.slug})
+
+    def form_valid(self, form):
+        post = get_object_or_404(Comment, slug = self.kwargs ['slug'])
+        form.instance.post = Comment
+        return super().form_valid(form)
     
 class ContactPage(ListView):
     template_name = 'mainwebsite/contact.html'

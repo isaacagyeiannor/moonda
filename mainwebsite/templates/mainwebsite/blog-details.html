@@ -87,7 +87,7 @@
                                                 </div>
                                                 {% endif %} {% endcomment %}
                                                 <h5>Leave a comment</h5>
-                                                <form method="post" style="margin-top: 1.3em;" >{% csrf_token %}
+                                                <form action="{% url 'request:add_blogcomment' request.slug %}" enctype = "multiparty/form-data" method = "post">{% csrf_token %}
                                                     <div class="form-group">
                                                         <label class="form-label">Post</label>
                                                         {% render_field form.post class="form-control" placeholder="Your Name" %}
