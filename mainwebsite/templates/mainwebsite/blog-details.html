@@ -116,11 +116,28 @@
                                             <div class="col-md-12">
                                               <div class="card">
                                                 <div class="card-header">
-                                                  <div class="card-title">Create Article</div>
+                                                  {% if new_comment %}
+                                                  <div class="alert alert-success" role="alert">
+                                                    Your comment is awaiting moderation
+                                                  </div>
+                                                  {% else %}
+                                                  <div class="card-title">Leave a comment</div>
                                                 </div>
                                                 <form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
                                                 
                                                 <div class="card-body">
+                                                  <div class="form-group">
+                                                    <label class="form-label">Name</label>
+                                                    {% render_field comment_form.name class="content" placeholder="Your name" %}
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label class="form-label">Email</label>
+                                                    {% render_field comment_form.email class="content" placeholder="Your email." %}
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label class="form-label">Comment</label>
+                                                    {% render_field comment_form.body class="content" placeholder="Write your comment here..." %}
+                                                  </div>
                                                   <div class="form-group">
                                                     <label class="form-label">Blog Title</label>
                                                     {% render_field form.title class="form-control" placeholder="Blog Title" %}
