@@ -132,21 +132,23 @@
                                 <h1 class="corzo-widget-title corzo-with-divider">Recent Articles</h1>
                                 <span class="clear"></span>
                                 <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-4">
+                                    {% for blog in blogs %}
                                     <div class="gdlr-core-recent-post-widget clearfix">
                                         <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                                            <a href="singleblog.html">
-                                                <img src="upload/iStock-638219322-150x150.jpg" alt="" width="150" height="150" title="Conference" />
+                                            <a href="{% url 'post_detail' slug=blog.slug %}">
+                                                <img src="{{blog.image.url}} " alt="" width="150" height="150" title="Conference" />
                                             </a>
                                         </div>
                                         <div class="gdlr-core-recent-post-widget-content">
                                             <div class="gdlr-core-recent-post-widget-info">
                                                 <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="singleblog.html">15 Oct 20</a>
+                                                    <span class="gdlr-core-head"><i class="icon_clock_alt"></i></span><a href="{% url 'post_detail' slug=blog.slug %}">{{blog.created}}</a>
                                                 </span>
                                             </div>
-                                            <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href="singleblog.html">Business With Remote Working</a></div>
+                                            <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href="{% url 'post_detail' slug=blog.slug %}">{{blog.title}}</a></div>
                                         </div>
                                     </div>
+                                    {% endfor %}
                                     <div class="gdlr-core-recent-post-widget clearfix">
                                         <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
                                             <a href="singleblog.html">
@@ -179,6 +181,7 @@
                                             <div class="gdlr-core-recent-post-widget-title gdlr-core-title-font"><a href="singleblog.html">Boosting Your Marketing Team</a></div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                             
