@@ -83,7 +83,7 @@
                                             
                                             <div class="col-md-12 card mb-4  mt-3 ">
 
-                                              <div >
+                                              <div class="card-body">
                                                 {% if new_comment %}
                                                 <div class="alert alert-success" role="alert">
                                                   Your comment is awaiting moderation
@@ -93,18 +93,18 @@
                                                 <form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
                                                   
                                                   {% comment %} {{ comment_form.as_p }} {% endcomment %}
-                                                  <div class="form-group">
-                                                    <label class="form-label">Name</label>
-                                                    {% render_field comment_form.name class="content" placeholder="Your name" %}
-                                                  </div>
-                                                  <div class="form-group">
-                                                    <label class="form-label">Email</label>
-                                                    {% render_field comment_form.email class="content" placeholder="Your email." %}
-                                                  </div>
-                                                  <div class="form-group">
-                                                    <label class="form-label">Comment</label>
-                                                    {% render_field comment_form.body class="content" placeholder="Write your comment here..." %}
-                                                  </div>
+                                                <div class="form-group row">
+                                                  <label class="form-label">Name</label>
+                                                  {% render_field comment_form.name class="content" placeholder="Your name" %}
+                                                </div>
+                                                <div class="form-group">
+                                                  <label class="form-label">Email</label>
+                                                  {% render_field comment_form.email class="content" placeholder="Your email." %}
+                                                </div>
+                                                <div class="form-group">
+                                                  <label class="form-label">Comment</label>
+                                                  {% render_field comment_form.body class="content" placeholder="Write your comment here..." %}
+                                                </div>
                                                   {% csrf_token %}
                                                   <button type="submit" class="btn btn-primary  btn-lg">Post Comment</button>
                                                 </form>
