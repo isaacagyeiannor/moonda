@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from taggit.models import Tag
 from django.urls import reverse_lazy, reverse
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DetailView, FormView
 from django.views.generic.edit import DeleteView
@@ -374,6 +375,7 @@ def post_detail(request, slug):
     comments = post.comments.filter(active=True)
     new_comment = None
     blog = Blog.objects.all()
+    tag = Tag.objects.all()
     # Comment posted
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
@@ -392,6 +394,7 @@ def post_detail(request, slug):
                                            'comments': comments,
                                            'new_comment': new_comment,
                                            'blogs': blog,
+                                           'tags': tag,
                                            'comment_form': comment_form})
     
 class ContactPage(ListView):
