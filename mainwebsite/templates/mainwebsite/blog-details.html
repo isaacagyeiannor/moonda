@@ -81,19 +81,18 @@
                                               </div>
                                             </div>
                                             
-                                            <div class="col-md-12">
-                                              <div class="card">
-                                                <div class="card-header">
-                                                  {% if new_comment %}
-                                                  <div class="alert alert-success" role="alert">
-                                                    Your comment is awaiting moderation
-                                                  </div>
-                                                  {% else %}
-                                                  <div class="card-title">Leave a comment</div>
+                                            <div class="col-md-12 card mb-4  mt-3 ">
+
+                                              <div class="card-body">
+                                                {% if new_comment %}
+                                                <div class="alert alert-success" role="alert">
+                                                  Your comment is awaiting moderation
                                                 </div>
+                                                {% else %}
+                                                <h5>Leave a comment</h5>
                                                 <form method='POST' enctype='multipart/form-data' novalidate>{% csrf_token %}
-                                                
-                                                <div class="card-body">
+                                                  
+                                                  {% comment %} {{ comment_form.as_p }} {% endcomment %}
                                                   <div class="form-group">
                                                     <label class="form-label">Name</label>
                                                     {% render_field comment_form.name class="content" placeholder="Your name" %}
@@ -106,16 +105,13 @@
                                                     <label class="form-label">Comment</label>
                                                     {% render_field comment_form.body class="content" placeholder="Write your comment here..." %}
                                                   </div>
-                                                  <div class="card-footer text-right">
-                                                    <div class="d-flex">
-                                                      <a href="{% url 'view_blogs' %}" class="btn btn-link">Cancel</a>
-                                                      <button type="submit" class="btn btn-primary ml-auto">Post</button>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                {% endif %}
+                                                  {% csrf_token %}
+                                                  <button type="submit" class="btn btn-primary  btn-lg">Post Comment</button>
                                                 </form>
+                                                {% endif %}
                                               </div>
+                                            
+                                            
                                             </div>
 
                                         <!--Endcomment-->
