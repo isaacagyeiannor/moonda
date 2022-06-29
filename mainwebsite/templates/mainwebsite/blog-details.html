@@ -132,7 +132,7 @@
                                 <h1 class="corzo-widget-title corzo-with-divider">Recent Articles</h1>
                                 <span class="clear"></span>
                                 <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-4">
-                                    {% for blog in blogs %}
+                                    {% for blog in blogs|slice:':3'  %}
                                     <div class="gdlr-core-recent-post-widget clearfix">
                                         <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
                                             <a href="{% url 'post_detail' slug=blog.slug %}">
