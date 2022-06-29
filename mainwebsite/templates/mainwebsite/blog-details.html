@@ -157,7 +157,9 @@
                                 <h1 class="corzo-widget-title corzo-with-divider">Tag Cloud</h1>
                                 <span class="clear"></span>
                                 <div class="tagcloud">
-                                    <a href="#" class="tag-cloud-link tag-link-8 tag-link-position-1" style="font-size: 18.5pt;" aria-label="Business (3 items)">Business</a>
+                                    {% for tag in tags %}
+                                    <a href="#" class="tag-cloud-link tag-link-8 tag-link-position-1" style="font-size: 18.5pt;" aria-label="Business (3 items)">{{ tag.name }}</a>
+                                    {% endfor %}
                                     <a href="#" class="tag-cloud-link tag-link-9 tag-link-position-2" style="font-size: 8pt;" aria-label="Digital (1 item)">Digital</a>
                                     <a href="#" class="tag-cloud-link tag-link-12 tag-link-position-3" style="font-size: 8pt;" aria-label="Divestitures (1 item)">Divestitures</a>
                                     <a href="#" class="tag-cloud-link tag-link-10 tag-link-position-4" style="font-size: 18.5pt;" aria-label="Manufacturing (3 items)">Manufacturing</a>
