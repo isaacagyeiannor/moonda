@@ -367,11 +367,6 @@ class BlogPage(ListView):
         # And so on for more models
         return context
     
-# class BlogDetailsPage(DetailView):
-#     template_name = 'mainwebsite/blog-details.html'
-#     model = Blog
-#     context_object_name = 'blogs'
-    
     
 def post_detail(request, slug):
     template_name = 'mainwebsite/blog-details.html'
