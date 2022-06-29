@@ -95,23 +95,21 @@
                                                   {% comment %} {{ comment_form.as_p }} {% endcomment %}
                                                 
                                                 <div class="form-group row">
-                                                  <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                                  <label for="inputname" class="col-sm-2 col-form-label">Name</label>
                                                   <div class="col-sm-10">
                                                     {% render_field comment_form.name class="content" placeholder="Your name" %}
-                                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                                                   </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                                    <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
                                                     <div class="col-sm-10">
-                                                      {% render_field comment_form.email class="content" placeholder="Your name" %}
-                                                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                                      {% render_field comment_form.email class="content" placeholder="Your email" %}
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                  <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                                  <label for="inputPassword" class="col-sm-2 col-form-label">Comment</label>
                                                   <div class="col-sm-10">
-                                                    {% render_field comment_form.body class="content" placeholder="Your name" %}
+                                                    {% render_field comment_form.body class="content" placeholder="Write your comment here" %}
                                                     <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                                                   </div>
                                                 </div>
