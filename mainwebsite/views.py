@@ -373,6 +373,7 @@ def post_detail(request, slug):
     post = get_object_or_404(Blog, slug=slug)
     comments = post.comments.filter(active=True)
     new_comment = None
+    blog = Blog.objects.all()
     # Comment posted
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
@@ -390,6 +391,7 @@ def post_detail(request, slug):
     return render(request, template_name, {'posts': post,
                                            'comments': comments,
                                            'new_comment': new_comment,
+                                           'blogs': blog,
                                            'comment_form': comment_form})
     
 class ContactPage(ListView):
