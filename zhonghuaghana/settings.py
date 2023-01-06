@@ -114,8 +114,8 @@ WSGI_APPLICATION = 'zhonghuaghana.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangowebsiteproject',
-        'USER': 'djangowebsitesprojectuser',
+        'NAME': 'djangoproject',
+        'USER': 'djangoprojectuser',
         'PASSWORD': 'Skies109376Babes',
         'HOST': 'localhost',
         'PORT': '',
