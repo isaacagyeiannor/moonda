@@ -30,7 +30,7 @@ import socket
 
 if socket.gethostname() == "django-websites":
     DEBUG = False
-    ALLOWED_HOSTS = ["161.35.168.181", "zhonghuaghana.com", "www.zhonghuaghana.com"]   
+    ALLOWED_HOSTS = ["143.110.172.63", "zhonghuaghana.com", "www.zhonghuaghana.com"]   
 else:
     DEBUG = True
     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
