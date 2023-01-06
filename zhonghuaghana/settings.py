@@ -24,9 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-wno9!#^ws0n8lmwz2m9#i60e#-71(efk=%r#2i@27p(7tlscd6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['159.65.180.109', 'zhonghuaghana.com', 'www.zhonghuaghana.com']
+import socket
+
+if socket.gethostname() == "django-websites":
+    DEBUG = False
+    ALLOWED_HOSTS = ["161.35.168.181", "zhonghuaghana.com", "www.zhonghuaghana.com"]   
+else:
+    DEBUG = True
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -53,6 +60,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,14 +93,34 @@ WSGI_APPLICATION = 'zhonghuaghana.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# if socket.gethostname() == "cash-lotto-website":
+#     DEBUG = False
+#     ALLOWED_HOSTS = ["67.205.133.94", "zhonghuaghana.com", "www.zhonghuaghana.com"]   
+# else:
+#     DEBUG = True
+#     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'zhonghuaghanadb',
+# 	'USER': 'busybrain',
+# 	'PASSWORD': 'Buzy109!',
+# 	'HOST': 'localhost',
+# 	'PORT'	: '5432'
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zhonghuaghanadb',
-	'USER': 'busybrain',
-	'PASSWORD': 'Buzy109!',
-	'HOST': 'localhost',
-	'PORT'	: '5432'
+        'NAME': 'djangowebsiteproject',
+        'USER': 'djangowebsitesprojectuser',
+        'PASSWORD': 'Skies109376Babes',
+        'HOST': 'localhost',
+        'PORT': '',
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
