@@ -240,7 +240,7 @@
 	color: #ed5151   ;
 }
  .header {
-	background-color: #1A8C88;
+	background-color: #EB4848;
 }
  .header-bg {
 	background: #eef2f9;
@@ -921,18 +921,18 @@
 }
 
  .app-sidebar .side-menu__item.active {
-	background:#1A8C88 !important;
+	background:#EB4848 !important;
 	color: #fff !important;
 }
  .app-sidebar .side-menu__item.active:hover {
-	background:#1A8C88 !important;
+	background:#EB4848 !important;
 	color: #fff !important;
 }
  .app-sidebar:before {
-	background:#1A8C88;
+	background:#EB4848;
 }
  .app-sidebar-footer {
-	background:#1A8C88;
+	background:#EB4848;
 }
  .masthead .masthead-bg {
 	background:linear-gradient(-225deg, rgba(74, 61, 184, 0.8) 48%, rgba(50, 228, 179, 0.8) 100%) !important;
@@ -1119,11 +1119,11 @@
 }
 @media (min-width:992px) {
 	.sticky-wrapper.is-sticky .horizontal-main {
-		background: #1A8C88;
+		background: #EB4848;
 	}
 }
 .horizontal-main{
-	background: #1A8C88;
+	background: #EB4848;
 }
 .bg-card-light:hover {
     border-color: #ed5151;
