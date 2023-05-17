@@ -599,10 +599,10 @@ ul.slides .clearfix{ height: auto; opacity: 1; clear: none; }
 
 .gdlr-core-feature-content-item .gdlr-core-feature-content-caption{ font-size: 13px; color: #fff; }
 .gdlr-core-feature-content-item .gdlr-core-feature-content-title{ display: inline-block; font-size: 27px; font-weight: 600; margin-bottom: 18px; color: #fff;
-    border-bottom-width: 1px; border-bottom-style: solid; border-color: #d32525; }
+    border-bottom-width: 1px; border-bottom-style: solid; border-color: #F5831C; }
 .gdlr-core-feature-content-item .gdlr-core-feature-content-content{ font-size: 18px; color: #fff; }
-.gdlr-core-feature-content-item .gdlr-core-feature-content-learn-more{ color: #d32525; font-weight: bold; }
-.gdlr-core-feature-content-item .gdlr-core-feature-content-learn-more:hover{ color: #d32525; }
+.gdlr-core-feature-content-item .gdlr-core-feature-content-learn-more{ color: #F5831C; font-weight: bold; }
+.gdlr-core-feature-content-item .gdlr-core-feature-content-learn-more:hover{ color: #F5831C; }
 .gdlr-core-feature-content-item .gdlr-core-feature-content-learn-more i{ font-size: 31px; margin-left: 10px; vertical-align: middle; }
 
 .gdlr-core-feature-content .gdlr-core-feature-content-wrap{ max-height: 0; overflow: hidden;
